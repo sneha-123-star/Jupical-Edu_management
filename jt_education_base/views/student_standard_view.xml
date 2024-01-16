@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Student Standard Form View-->
+        <record id="standard_form_view" model="ir.ui.view">
+            <field name="name">Student Standard Form View</field>
+            <field name="model">student.standard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>                                
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Student Standard Tree View-->
+        <record id="standard_tree_view" model="ir.ui.view">
+            <field name="name">Student Standard Tree View</field>
+            <field name="model">student.standard</field>
+            <field name="arch" type="xml">
+                <tree editable='top'>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!--Division Form View-->
+        <record id="division_form_view" model="ir.ui.view">
+            <field name="name">Standard Division Form View</field>
+            <field name="model">standard.division</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Division Tree View-->
+        <record id="division_tree_view" model="ir.ui.view">
+            <field name="name">Standard Division Tree View</field>
+            <field name="model">standard.division</field>
+            <field name="arch" type="xml">
+                <tree editable='top'>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Year Form View-->
+        <record id="year_form_view" model="ir.ui.view">
+            <field name="name">Year Year Form View</field>
+            <field name="model">year.year</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--Year Tree View-->
+        <record id="year_tree_view" model="ir.ui.view">
+            <field name="name">Year Year Tree View</field>
+            <field name="model">year.year</field>
+            <field name="arch" type="xml">
+                <tree editable='top'>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

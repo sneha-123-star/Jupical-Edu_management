@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="result_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="result">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div style="width:100%;height:100%;padding:0px;">
+                            <div style="height:2000px;width:1414px;">
+                                <div style="margin-right:50px;margin-left:50px;">
+                                    <div>
+                                        <p style="align:center;text-align:center;"><img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:180px;height:150px;margin-top:10px;"/></p>
+                                    </div>
+                                    <div>
+                                        <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                                    </div>
+                                    <div>
+                                        <p style="align:center;text-align:center;font-size:22px;">
+                                            (<span t-field="res_company.street"/>,
+                                            <span t-field="res_company.street2"/>,
+                                            <span t-field="res_company.city"/>,
+                                            <span t-field="res_company.state_id"/>  <span t-field="res_company.zip"/>,
+                                            <span t-field="res_company.country_id"/>)
+                                        </p>
+                                        <p style="align:center;text-align:center;font-size:22px;">
+                                            <strong>Email: </strong><span t-field="res_company.email"/>,<strong>Phone: </strong><span t-field="res_company.phone"/>,<strong>Website: </strong><span t-field="res_company.website"/>
+                                        </p>
+                                    </div>
+                                    <div class="row" style="padding-top:50px;">
+                                        <div class="col-6" style="font-size:25px;">
+                                            <div style="align:left;text-align:left;">
+                                                Name and Surname :    <t t-esc="result.student_id.name"/> <t t-esc="result.student_id.surname"/>
+                                            </div>
+                                            <div style="align:left;text-align:left;padding-top:30px;">
+                                                Parent Name  :   <t t-esc="result.student_id.father_name"/>  <t t-esc="result.student_id.surname"/>
+                                            </div>
+                                            <div style="align:left;text-align:left;padding-top:30px;">
+                                                Class :   <t t-esc="result.standard.name"/>-<t t-esc="result.division.name"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div style="align:right;text-align:right;padding-left:200px;">
+                                                <table class="table table-bordered" style="border:solid 1px; border-color:black;width:450px;">
+                                                    <tr>
+                                                        <td style="width:150px;">
+                                                            Day of Study
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                         <td rowspan="4">
+                                                            <div style="text-align:center;">
+                                                             <img t-att-src="image_data_uri(result.student_id.image_1920)" style="margin-bottom:-60px;height:150px;width:150px;"/>
+                                                            
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Attend
+                                                        </td>
+                                                         <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Not attend
+                                                        </td>
+                                                         <td>
+                                                            0
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Late
+                                                        </td>
+                                                         <td>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <t t-set="count_subjectline" t-value='1'/>
+                                    <t t-foreach="result.subject_line" t-as="subject">
+                                        <div class="row"  style="margin-bottom:20px;margin-top:10px;">
+                                        <div class="col-12">
+                                            <b style="font-size:25px;">
+                                            <t t-esc="count_subjectline"/>
+                                            <t t-esc="subject.subject_id.name"/></b>
+
+                                            <t t-set="count_subjectline" t-value='count_subjectline+1'/>
+                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;width:1300px;text-align:center;margin-bottom:20px;margin-top:10px;">
+                                            <tr style="height:25px;">
+                                                <td>
+                                                    No.
+                                                </td>
+                                                <t t-set="count" t-value='1'/>
+                                                <t t-foreach="len(subject.subject_id.subject_category_ids)" t-as="categ">
+
+                                                    <td>
+                                                        <t t-esc="count"/>                                                     
+                                                    </td>
+                                                    <t t-set="count" t-value='count+1'/>
+                                                </t>
+                                                
+                                                <td rowspan="2">
+                                                    Total score
+                                                </td>
+                                                <td rowspan="2">
+                                                    Final score
+                                                </td>
+                                            </tr>
+                                            <tr style="height:48px;">
+                                                <td style="transform:rotate(269deg);">
+                                                   Subject Category
+                                                </td>
+                                                 <t t-foreach="subject.subject_id.subject_category_ids" t-as="categ">
+
+                                                    <td>
+                                                        
+                                                        <t t-esc="categ.name"/>                                              
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                            <t t-set="total" t-value='1'/>
+                                            <tr style="height:25px;">
+                                                <td>
+                                                    Total score
+                                                </td>
+                                                <t t-foreach="subject.subject_id.subject_category_ids" t-as="categ">
+
+                                                    <td>
+                                                        
+                                                        <t t-esc="categ.mark"/>                   
+                                                        <t t-set="total" t-value="total+categ.mark"/>                           
+                                                    </td>
+                                                </t>
+                                                <td>
+                                                    <t t-esc="total-1"/>
+                                                </td>
+                                                <td>
+                                                    100%
+                                                </td>
+                                            </tr>
+                                            <tr style="height:25px;">
+                                                <td>
+                                                    Actual score
+                                                </td>
+                                                <t t-set="a_total" t-value='0'/>
+                                            
+                                                 <t t-foreach="subject.subject_category_ids" t-as="categ">
+                                                    <t t-if="subject.id == categ.subject_line_id.id">
+                                                        <td><t t-esc="categ.actual_mark"/></td>
+                                                        <t t-set="a_total" t-value="a_total+categ.actual_mark"/>
+                                                    </t>
+                                                </t>
+                                        
+                                                <td>
+                                                    <t t-esc="a_total"/>
+                                                </td>
+                                                <td>
+                                                    <t t-set="final_result" t-value="(a_total*100)/total"/>
+                                                    <t t-esc="final_result" t-options='{"widget": "float", "precision": 2}'/>%
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </div>
+                                    </div>
+                                    </t>
+                                    <div class="row" style="margin-bottom:20px;margin-top:10px;">
+                                        <!-- <div class="col-6">
+                                            2.English
+                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;height:120px;width:700px;text-align:center;margin-bottom:20px;margin-top:10px;">
+                                                <tr>
+                                                    <td>
+                                                        No
+                                                    </td>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td rowspan="2">
+                                                        Total ...
+                                                    </td>
+                                                    <td rowspan="2">
+                                                        Final ...
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Subject 
+                                                    </td>
+                                                    <td>
+                                                        Listninng
+                                                    </td>
+                                                    <td>
+                                                        Speaking
+                                                    </td>
+                                                    <td>
+                                                        Reading
+                                                    </td>
+                                                    <td>
+                                                        Writing
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Standard Score
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        40
+                                                    </td>
+                                                    <td>
+                                                        100%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Actual Score
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        20
+                                                    </td>
+                                                    <td>
+                                                        50%
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                             3.Chinese
+                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;height:120px;width:700px;text-align:center;margin-top:10px;">
+                                                <tr>
+                                                    <td>
+                                                        No
+                                                    </td>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td rowspan="2">
+                                                        Total ...
+                                                    </td>
+                                                    <td rowspan="2">
+                                                        Final ...
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Subject 
+                                                    </td>
+                                                    <td>
+                                                        Listninng
+                                                    </td>
+                                                    <td>
+                                                        Speaking
+                                                    </td>
+                                                    <td>
+                                                        Reading
+                                                    </td>
+                                                    <td>
+                                                        Writing
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Standard Score
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        10
+                                                    </td>
+                                                    <td>
+                                                        40
+                                                    </td>
+                                                    <td>
+                                                        100%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Actual Score
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        20
+                                                    </td>
+                                                    <td>
+                                                        50%
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div> -->
+                                        <div class="col-12">
+                                            <b style="font-size:25px;">Grade Distribution</b>
+                                            <table class="table table-bordered" style="text-align:center;border:solid 1px; border-color:black;width:500px;height:150px;margin-left:100px;margin-top:20px;">
+                                                <tr>
+                                                    <td>Final Score</td>
+                                                    <t t-foreach="result.get_gread_records()" t-as="grade">
+                                                        <td>
+                                                            <t t-esc="grade.mark_range"/>  
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Grade
+                                                    </td>
+                                                     <t t-foreach="result.get_gread_records()" t-as="grade">
+                                                        <td>      
+                                                            <t t-esc="grade.name"/>   
+                                                        </td>
+                                                    </t>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div style="padding-top:20px;">
+                                        <b style="font-size:25px;">
+                                            Suggestion from Teacher</b>
+                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;padding-top:20px;margin-bottom:20px;margin-top:10px;">
+                                                <tr>
+                                                    <td>
+                                                        No
+                                                    </td>
+                                                    <td>
+                                                        Teacher's Name
+                                                    </td>
+                                                    <td>
+                                                        Signature
+                                                    </td>
+                                                    <td>
+                                                        Teacher's correction and suggestion
+                                                    </td>
+                                                </tr>
+                                                <t t-set="teacher_count" t-value='1'/>
+                                                <t t-foreach="result.subject_line" t-as="subject">
+                                                    <tr>
+                                                        <td>
+                                                           <t t-esc="teacher_count"/>
+                                                        </td>
+                                                        <t t-set="teacher_count" t-value='teacher_count+1'/>
+                                                        <td >
+                                                            <t t-esc="subject.subject_id.name"/>
+                                                             Teacher
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </t>
+                                            </table>
+                                        </div>
+                                        
+                                   
+                                    <div class="row" style="padding-top:100px;">
+                                        <div class="col-4">
+                                            <div t-if="res_company.stamp_image" style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:200px;width:200px;"/>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;">__________________________</p>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;"> <t t-esc="res_company.name"/></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <div t-if="res_company.signature" style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                                <img t-att-src="image_data_uri(res_company.signature)" style="margin-bottom:-60px;height:200px;width:200px;"/>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;">__________________________</p>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;"> Trusty Sign</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div t-if="result.student_id.signature" style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                                <img t-att-src="image_data_uri(result.student_id.signature)" style="margin-bottom:-60px;height:200px;width:200px;"/>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;">__________________________</p>
+                                                <p style="color:black;font-weight:bold;font-size:30px;margin-top:0px;"> Student Sign</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <!--  <div class="row">
+                                        <p style="font-size:25px;color:black;"><span t-field="res_company.name"/></p>
+                                        <p style="font-size:20px;color:black;"><span style="font-style:italic" t-field="res_company.report_header"/></p>
+                                    </div> -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="result_report_template_paperformate" model="report.paperformat">
+            <field name="name">student.result.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_result_report" model="ir.actions.report">
+            <field name="name">Result</field>
+            <field name="model">student.result</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_exam.result_report_template</field>
+            <field name="report_file">jt_education_exam.result_report_template</field>
+            <field name="paperformat_id" ref="jt_education_exam.result_report_template_paperformate"/>
+            <field name="print_report_name">(object.student_id.name)</field>
+            <field name="binding_model_id" ref="jt_education_exam.model_student_result"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+            id="action_result_report"
+            model="student.result"
+            string="Result"
+            report_type="qweb-pdf"
+            name="ae_education_exam.result_report_template"
+            file="ae_education_exam.result_report_template"
+            print_report_name="object.student_id.name"
+            paperformat="ae_education_exam.result_report_template_paperformate"
+        /> -->
+
+    </data>
+</odoo> 

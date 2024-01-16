@@ -1,0 +1,827 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-12 11:26+0000\n"
+"PO-Revision-Date: 2020-10-12 11:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_library
+#: model:ir.actions.report,print_report_name:ae_education_library.action_books_report
+msgid "'Books - %s' % (object.name)"
+msgstr "'Livres - %s' % (object.name)"
+
+#. module: ae_education_library
+#: model:ir.actions.report,print_report_name:ae_education_library.action_issue_books_report
+msgid "'Issue Books - %s' % (object.name)"
+msgstr "'Livres thématiques - %s' % (object.name)"
+
+#. module: ae_education_library
+#: model:ir.actions.report,print_report_name:ae_education_library.action_memberships_report
+msgid "'Membership Detail - %s' % (object.name)"
+msgstr "'Détail de l'adhésion - %s' % (object.name)"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Numéro fiscal\"/>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Site Web\" title=\"Site Web\"/>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Téléphone\" title=\"Téléphone\"/>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "<span>Membership Details</span>"
+msgstr "<span>Détails sur l'adhésion</span>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<span>Student Details</span>"
+msgstr "<span>Détails sur l'étudiant</span>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "<strong style=\"color:#3333cc;text-align:center;\">Books Detail</strong>"
+msgstr "<strong style=\"color:#3333cc;text-align:center;\">Détail des livres</strong>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<strong>Date and Time Of Issue</strong>"
+msgstr "<strong>Date et heure de publication</strong>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<strong>Date of Return</strong>"
+msgstr "<strong>Date de retour</strong>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<strong>Name</strong>"
+msgstr "<strong>Nom</strong>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<strong>Rollno.</strong>"
+msgstr "<strong>Rollno.</strong>"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "<strong>Standard</strong>"
+msgstr "<strong>Standard</strong>"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__library_memberships__state__active
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "Active"
+msgstr "Actif"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Add Books"
+msgstr "Ajouter des livres"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__art
+msgid "Art"
+msgstr "Art"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__author
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__author
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "Author"
+msgstr "Auteur"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__authors_code
+msgid "Author ID"
+msgstr "Identification de l'auteur"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__partner_id
+msgid "Author Name"
+msgstr "Nom de l'auteur"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_authors
+#: model:ir.ui.menu,name:ae_education_library.author_submenu
+msgid "Authors"
+msgstr "Auteurs"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_authors_authors
+msgid "Authors Details"
+msgstr "Détails sur les auteurs"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_kanban_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_kanban_view
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_kanban_view
+msgid "AvatarDefault"
+msgstr "AvatarPar défaut"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__biography
+msgid "Biography"
+msgstr "Biographie"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__books_image
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__issuebooks_image
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__issuebookslines_image
+msgid "Book Cover Picture"
+msgstr "Photo de couverture du livre"
+
+#. module: ae_education_library
+#: model:ir.actions.report,name:ae_education_library.action_books_report
+msgid "Book Detail"
+msgstr "Détail du livre"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__books_code
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "Book ID"
+msgstr "Livre ID"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__book_ids
+msgid "Book Ids"
+msgstr "Idées de livres"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Book Information"
+msgstr "Informations sur les livres"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__state__issued
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_form_view
+msgid "Book Issued"
+msgstr "Livre publié"
+
+#. module: ae_education_library
+#: model:ir.ui.menu,name:ae_education_library.language_menu
+msgid "Book Language"
+msgstr "Langue du livre"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "Book Limit"
+msgstr "Limite de livres"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__book_ids
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__name
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__name
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "Book Name"
+msgstr "Nom du livre"
+
+#. module: ae_education_library
+#: model:ir.model.constraint,message:ae_education_library.constraint_books_books_name_uniq
+msgid "Book Name Must Be Unique !"
+msgstr "Le nom du livre doit être unique !"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__state__notissued
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_form_view
+msgid "Book Not Issued"
+msgstr "Livre non publié"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_book_xls_report_view
+msgid "Book Report Excel"
+msgstr "Rapport de livre Excel"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__state
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "Book Status"
+msgstr "Statut des livres"
+
+#. module: ae_education_library
+#: model:ir.ui.menu,name:ae_education_library.book_xls_report_submenu
+msgid "Book XLS Report"
+msgstr "Rapport sur le livre XLS"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_book_xls_report
+msgid "Book class Xls Report"
+msgstr "Rapport sur la classe de livres Xls"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_books
+#: model:ir.ui.menu,name:ae_education_library.books_submenu
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "Books"
+msgstr "Livres"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_books_books
+msgid "Books Details"
+msgstr "Détails des livres"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_issue_books
+#: model:ir.model,name:ae_education_library.model_issue_books_lines
+msgid "Books Issued details."
+msgstr "Détails sur les livres publiés."
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__state__cancel
+#: model_terms:ir.ui.view,arch_db:ae_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_form_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__child
+msgid "Child"
+msgstr "Enfant"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__city
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "City"
+msgstr "Ville"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__comic
+msgid "Comic"
+msgstr "Bande dessinée"
+
+#. module: ae_education_library
+#: model:ir.ui.menu,name:ae_education_library.configurations_menu
+msgid "Configurations"
+msgstr "Configurations"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Contact Details"
+msgstr "Coordonnées"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__cooking
+msgid "Cooking"
+msgstr "Cuisine"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__country_id
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Country"
+msgstr "Pays"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__create_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__create_date
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__datetime_issue
+msgid "Date & Time Of Issue"
+msgstr "Date et heure d'émission"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__date_return
+msgid "Date Of Return"
+msgstr "Date de retour"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__user
+msgid "Default user"
+msgstr "Utilisateur par défaut"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__display_name
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__division
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__division
+msgid "Division"
+msgstr "Division"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__excel_file
+msgid "Download Report"
+msgstr "Télécharger le rapport"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__issue_books__fine_detail__late
+msgid "Due to Late Return"
+msgstr "En raison d'un retour tardif"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__issue_books__fine_detail__lost
+msgid "Due to Lost"
+msgstr "En raison d'une perte"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__edition
+msgid "Edition"
+msgstr "Edition"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__email
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__emailid
+msgid "Email"
+msgstr "Courriel"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__end_date
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__file_name
+msgid "Excel File"
+msgstr "Fichier Excel"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.book_xls_report_view
+msgid "Excel Report file"
+msgstr "Fichier Excel Report"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__library_memberships__state__expire
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "Expire"
+msgstr "Expiration"
+
+#. module: ae_education_library
+#: model:ir.actions.server,name:ae_education_library.membership_expiry_remainder_cron_ir_actions_server
+#: model:ir.cron,cron_name:ae_education_library.membership_expiry_remainder_cron
+#: model:ir.cron,name:ae_education_library.membership_expiry_remainder_cron
+msgid "Expire Membership"
+msgstr "Expiration de l'adhésion"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__filename
+msgid "File Name"
+msgstr "Nom de Fichier"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__fine_amount
+msgid "Fine Amount"
+msgstr "Montant de l'amende"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Fine Amount Detail"
+msgstr "Détail du montant de l'amende"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Fine Description"
+msgstr "Description détaillée"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Fine Details"
+msgstr "Détails"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__fine_detail
+msgid "Fine Reason"
+msgstr "Raison de l'amende"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_report_template
+msgid "Generes"
+msgstr "Génère"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__genres
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__genres
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Genres"
+msgstr "Genres"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "Group By"
+msgstr "Groupe par"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__historic
+msgid "Historic"
+msgstr "Groupe par"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__horror
+msgid "Horror"
+msgstr "L'horreur"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__id
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__id
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__id
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__id
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__id
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__id
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__memberships_image
+msgid "Image"
+msgstr "Image"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__is_author
+msgid "Is a Author"
+msgstr "Est un auteur"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__book_limit
+msgid "Issue Book Limit"
+msgstr "Limite des livres d'émission"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__issuebookslines_ids
+msgid "Issue Book Lines"
+msgstr "Lignes d'émission"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_issuebooks
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__issue_books
+#: model:ir.ui.menu,name:ae_education_library.issuebooks_menu
+msgid "Issue Books"
+msgstr "Livres thématiques"
+
+#. module: ae_education_library
+#: model:ir.actions.report,name:ae_education_library.action_issue_books_report
+msgid "Issue Books Detail"
+msgstr "Détail des livres d'émission"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__issuebooks_code
+msgid "Issue ID"
+msgstr "Numéro d'identification"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Issued"
+msgstr "Publié sur"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_book_language
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__lang_id
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Language"
+msgstr "Langue"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines____last_update
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__write_uid
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_book_xls_report__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books_lines__write_date
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ae_education_library
+#: model:ir.ui.menu,name:ae_education_library.root_menu
+msgid "Library"
+msgstr "Bibliothèque"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_library_memberships
+msgid "Library Membership details."
+msgstr "Détails sur l'adhésion à la bibliothèque."
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid "Logo"
+msgstr "Logo"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__state__lost
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_form_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Lost"
+msgstr "Perdu"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__memberships_code
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "Membership ID"
+msgstr "ID de membre"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__state
+msgid "Membership Status"
+msgstr "Statut de membre"
+
+#. module: ae_education_library
+#: model:ir.actions.act_window,name:ae_education_library.action_memberships
+#: model:ir.ui.menu,name:ae_education_library.memberships_menu
+msgid "Memberships"
+msgstr "Adhésions"
+
+#. module: ae_education_library
+#: model:ir.actions.report,name:ae_education_library.action_memberships_report
+msgid "Memberships Detail"
+msgstr "Détail des adhésions"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__mobile
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__motivational
+msgid "Motivational"
+msgstr "Motivationnel"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__mystery
+msgid "Mystery"
+msgstr "Mystère"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__name
+#: model:ir.model.fields,field_description:ae_education_library.field_book_language__name
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__library_memberships__state__new
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "New"
+msgstr "Nouveau"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_books_books__no_of_books
+msgid "No Of Books"
+msgstr "Nombre de livres"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Not Issued"
+msgstr "Not Issued"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.book_xls_report_view
+msgid "Or"
+msgstr "Ou"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_report_template
+msgid ""
+"Page:\n"
+"                          <span class=\"page\"/>\n"
+"                          of\n"
+"                          <span class=\"topage\"/>"
+msgstr ""
+"Page:\n"
+"                          <span class=\"page\"/>\n"
+"                          de\n"
+"                          <span class=\"topage\"/>"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.book_xls_report_view
+msgid "Print Report"
+msgstr "Imprimer le rapport"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__publisher
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Publisher"
+msgstr "Éditeur"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Reason"
+msgstr "Motif"
+
+#. module: ae_education_library
+#: model:ir.ui.menu,name:ae_education_library.reports_menu
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__roll_no
+msgid "Roll No"
+msgstr "Numéro de rouleau"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__roll_no
+msgid "Roll No."
+msgstr "Numéro de rouleau."
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__romance
+msgid "Romance"
+msgstr "Romance"
+
+#. module: ae_education_library
+#: model:ir.model.fields.selection,name:ae_education_library.selection__books_books__genres__science
+msgid "Science"
+msgstr "Science"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.books_search_view
+msgid "Search Books"
+msgstr "Recherche de livres"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_search_view
+msgid "Search Issue Books"
+msgstr "Recherche de livres thématiques"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "Search Memberships"
+msgstr "Rechercher des adhésions"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__standard
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__standard
+msgid "Standard"
+msgstr "Standard"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__start_date
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__state_id
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "State"
+msgstr "État"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_search_view
+msgid "Status"
+msgstr "Statut"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__street
+msgid "Street"
+msgstr "Rue"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Street 2..."
+msgstr "Rue 2..."
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__street2
+msgid "Street2"
+msgstr "Rue 2"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_library_memberships__student_id
+msgid "Student"
+msgstr "Étudiant"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "Student ID"
+msgstr "Carte d'étudiant"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.issuebook_form_view
+msgid "Student Information"
+msgstr "Informations pour les étudiants"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.memberships_report_template
+msgid "Student Name"
+msgstr "Nom de l'étudiant
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__student_id
+msgid "Students"
+msgstr "Étudiants"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_authors_authors__website
+msgid "Website Link"
+msgstr "Lien vers le site web"
+
+#. module: ae_education_library
+#: model:ir.model,name:ae_education_library.model_book_language
+msgid "book.language"
+msgstr "book.language"
+
+#. module: ae_education_library
+#: model_terms:ir.ui.view,arch_db:ae_education_library.view_partner_form
+msgid "e.g. https://www.odoo.com"
+msgstr "e.x. https://www.odoo.com"
+
+#. module: ae_education_library
+#: model:ir.model.fields,field_description:ae_education_library.field_issue_books__fine_description
+msgid "fine description"
+msgstr "bonne description"

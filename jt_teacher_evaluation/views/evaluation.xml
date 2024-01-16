@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="evaluation_form_view" model="ir.ui.view">
+			<field name="name">Evaluation</field>
+			<field name="model">eval.profile</field>
+			<field name="arch" type="xml">
+				<form string="Evaluation">
+					<header>
+						<button name="act_publish" states="draft"
+								type="object" string="Start Evaluation"
+								class="oe_highlight"/>
+						<button name="act_set_to_draft" states="publish"
+								type="object" string="Set to Draft"
+								class="oe_highlight"/>
+						<button name="act_finish" class="oe_highlight"
+								states="publish" type="object" string="Finish"/>
+						<button name="act_cancel" states="publish"
+								type="object" string="Cancel"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,publish,finish,cancel"/>
+					</header>
+					<sheet>						
+						<div>
+							<h1>
+								<field name="name" placeholder="Evaluation Name"  attrs="{'readonly':[('state','in',['finish'])]}" required='1' style="width: 100%"/>
+							</h1>
+						</div>
+						<group>
+							<group>
+								<field name="student_id" attrs="{'invisible':[('user_type','!=','student')],'required':[('user_type','=','student')],'readonly':[('state','in',['finish'])]}"/>
+								<field name="teacher_id" attrs="{'invisible':[('user_type','!=','teacher')],'required':[('user_type','=','teacher')],'readonly':[('state','in',['finish'])]}"/>
+								<field name="parent_id" attrs="{'invisible':[('user_type','!=','parent')],'required':[('user_type','=','parent')],'readonly':[('state','in',['finish'])]}"/>
+								<field name="date" attrs="{'readonly':[('state','in',['finish'])]}"/>
+								
+							</group>
+							<group>
+								<field name="user_type" required="1" attrs="{'readonly':[('state','in',['finish'])]}"/>
+								<field name="user_id"  attrs="{'readonly':[('state','in',['finish'])]}"/>
+								
+							</group>
+						</group>
+						
+						<notebook>
+                            <page string="Question List">
+                                <field name="tab_ids" attrs="{'readonly':[('state','not in',['publish'])]}">
+                                    <tree editable="bottom">
+                                    	<field name="tab_id" invisible='1'/>
+                                    	<field name="question_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+										<field name="rating_id"/>
+                                        <field name="remarks"/>
+                                    </tree>
+                                </field>
+                                <div>
+                                	<strong>
+                                		<label for="total"/>
+                                		<field name="total"/>
+                                	</strong>
+                               	</div>
+
+                            </page>
+                        </notebook>
+					
+					</sheet>
+				
+				</form>
+			</field>
+		</record>
+
+		<record id="evaluation_tree_view" model="ir.ui.view">
+			<field name="name">Evaluation</field>
+			<field name="model">eval.profile</field>
+			<field name="arch" type="xml">
+				<tree string="Assignment">
+					<field name="name"/>
+					<field name="user_type"/>
+					<field name="date"/>					
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_eval_profile" model="ir.actions.act_window">
+		<field name="name">Evaluation</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">eval.profile</field>
+		<field name="view_mode">tree,form</field>
+		</record>	
+
+		<menuitem id="eval_menu" parent="jt_education_base.root_menu" action="action_eval_profile" name="Evaluation Profile" sequence="5"/>
+	</data>
+</odoo>

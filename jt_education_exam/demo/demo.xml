@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo data for grade -->
+        <record id="grade_1" model="result.grade">
+            <field name="name">A+</field>
+            <field name="mark_range">95-100</field>
+        </record>
+
+        <record id="grade_2" model="result.grade">
+            <field name="name">A</field>
+            <field name="mark_range">91-95</field>
+        </record>
+
+        <record id="grade_3" model="result.grade">
+            <field name="name">A-</field>
+            <field name="mark_range">85-90</field>
+        </record>
+
+        <record id="grade_4" model="result.grade">
+            <field name="name">B+</field>
+            <field name="mark_range">81-85</field>
+        </record>
+
+        <record id="grade_5" model="result.grade">
+            <field name="name">B</field>
+            <field name="mark_range">75-80</field>
+        </record>
+
+        <record id="grade_6" model="result.grade">
+            <field name="name">B-</field>
+            <field name="mark_range">71-75</field>
+        </record>
+
+        <record id="grade_7" model="result.grade">
+            <field name="name">C+</field>
+            <field name="mark_range">65-70</field>
+        </record>
+
+        <record id="grade_8" model="result.grade">
+            <field name="name">C</field>
+            <field name="mark_range">61-65</field>
+        </record>
+
+        <record id="grade_9" model="result.grade">
+            <field name="name">C-</field>
+            <field name="mark_range">55-60</field>
+        </record>
+        <record id="grade_10" model="result.grade">
+            <field name="name">D+</field>
+            <field name="mark_range">51-55</field>
+        </record>
+        <record id="grade_11" model="result.grade">
+            <field name="name">D</field>
+            <field name="mark_range">45-50</field>
+        </record>
+        <record id="grade_12" model="result.grade">
+            <field name="name">E/F</field>
+            <field name="mark_range">41-45</field>
+        </record>
+    </data>
+</odoo>

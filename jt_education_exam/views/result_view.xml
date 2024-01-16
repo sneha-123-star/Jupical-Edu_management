@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="student_exam_result_form_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Form View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h2>
+                            <field name="student_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                        </h2>
+                        <group>
+                            <group>
+                                <field name="exam_id" domain="[('standard','=',standard),('division','=',division),('curr_year','=',academic_year)]"/>
+                            </group>
+                            <group>
+                                <field name="standard"/>
+                                <field name="division"/>
+                                <field name="academic_year"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Mark Sheet">
+                                <field name="subject_line">
+                                    <tree>
+                                        <field name="subject_id"/>
+                                        <field name="mark" sum="Total"/>
+                                        <field name="pass_mark" sum="Total"/>
+                                        <field name="mark_scored" sum="Total"/>
+                                        <field name="grade_id"/>
+                                        <field name="exam_id"/>
+                                        <field name="student_id"/>
+                                        <field name="pass_or_fail" widget="boolean_toggle" readonly="1"/>
+                                        <field name="result_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="subject_id"/>
+                                                <field name="mark"/>
+                                                <field name="pass_mark"/>
+                                                <field name="mark_scored"/>
+                                                <field name="grade_id"/>
+                                                <field name="exam_id"/>
+                                                <field name="student_id"/>
+                                                <field name="pass_or_fail" widget="boolean_toggle"/>
+                                            </group>
+                                        </sheet>
+                                        <notebook>
+                                            <page string="Subject Category"> 
+                                                    <field name="subject_category_ids"  >
+                                                        <tree  delete='0' create='0' editable="bottom">
+                                                            <field name="name" readonly='1'/>
+                                                            <field name="mark" readonly='1'/>
+                                                            <field name="actual_mark" sum="Total"/>
+                                                            <field name="pass_mark" sum="Total"/>
+                                                        </tree>
+                                                    </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="total_mark_scored" sum="Scored Total"/>
+                                    <field name="percentage"/>
+                                    <field name="pass_fail_full" widget="boolean_toggle"/>
+                                </group>
+                                <div class="oe_clear"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_exam_result_tree_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Tree View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="exam_id"/>
+                    <field name="student_id"/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="academic_year"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_exam_result_search_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Search View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="student_id"/>
+                    <field name ='academic_year'/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="exam_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Student" name="student_id" context="{'group_by':'student_id'}"/>
+                        <filter string="Exam" name="exam_id" context="{'group_by':'exam_id'}"/>
+                        <filter string="Academic Year" name="academic_year" context="{'group_by':'academic_year'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="result_pivot_view" model="ir.ui.view">
+            <field name="name">Result Pivot view</field>
+            <field name="model">result.subject.line</field>
+            <field name="arch" type="xml">
+            <pivot string="Result" sample="1">
+                <field name="student_id" type="row"/>
+                <field name="mark" type="measure"/>
+                <field name="mark_scored" type="measure"/>
+                <field name="result_id" type="measure"/>
+                <field name="exam_id" type="measure"/>
+            </pivot>
+            </field>
+        </record>
+
+    </data>
+</odoo>

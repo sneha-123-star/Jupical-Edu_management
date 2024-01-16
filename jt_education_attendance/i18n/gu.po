@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-27 19:02+0000\n"
+"PO-Revision-Date: 2021-09-27 19:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__absent
+msgid "Absent"
+msgstr "ગેરહાજર"
+
+#. module: ae_education_attendance
+#: model:ir.actions.act_window,name:ae_education_attendance.action_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:ae_education_attendance.attendance_menu
+#: model_terms:ir.ui.view,arch_db:ae_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "હાજરી"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "હાજરી રેખા"
+
+#. module: ae_education_attendance
+#: model:ir.model.constraint,message:ae_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid ""
+"Attendance for this faculty and standard of this date is already exists !"
+msgstr ""
+"આ ફેકલ્ટી માટે હાજરી અને આ તારીખનું ધોરણ પહેલેથી જ અસ્તિત્વમાં છે!"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__create_date
+msgid "Created on"
+msgstr "પર બનાવેલ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__display_name
+msgid "Display Name"
+msgstr "નામ દર્શાવો"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__division_id
+msgid "Division"
+msgstr "વિભાગ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__faculty_id
+msgid "Faculty"
+msgstr "ફેકલ્ટી"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__id
+msgid "ID"
+msgstr "ઓળખ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance____last_update
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line____last_update
+msgid "Last Modified on"
+msgstr "છેલ્લે સુધારેલ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__write_uid
+msgid "Last Updated by"
+msgstr "દ્વારા છેલ્લે અપડેટ કરવામાં આવ્યું"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "નામ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__present
+msgid "Present"
+msgstr "પ્રસ્તુત"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "રોલ નંબર"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__standard_id
+msgid "Standard"
+msgstr "ધોરણ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__student_id
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "વિષયો"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__date
+msgid "Today's Date"
+msgstr "આજની તારીખ"
+
+#. module: ae_education_attendance
+#: model:ir.model,name:ae_education_attendance.model_attendance_attendance
+msgid "attendance.attendance"
+msgstr "હાજરી. હાજરી"
+
+#. module: ae_education_attendance
+#: model:ir.model,name:ae_education_attendance.model_attendance_line
+msgid "attendance.line"
+msgstr "હાજરી. લાઇન"

@@ -1,0 +1,529 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-11 11:54+0000\n"
+"PO-Revision-Date: 2023-10-11 11:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+msgid "<b>Assignment:</b>"
+msgstr "<b>مهمة:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "<b>Date Of Payment:</b>"
+msgstr "<b>تاريخ السداد:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "<b>Date of Issue:</b>"
+msgstr "<b>تاريخ المسألة:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "<b>Date of Return:</b>"
+msgstr "<b>تاريخ العودة:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<b>Division:</b>"
+msgstr "<b>قسم:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "<b>End Date:</b>"
+msgstr "<b>تاريخ الانتهاء:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "<b>Exam:</b>"
+msgstr "<b>امتحان:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "<b>Issue ID:</b>"
+msgstr "<b>معرّف المشكلة:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+msgid "<b>Issued Date:</b>"
+msgstr "<b>تاريخ الاصدار:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "<b>Month:</b>"
+msgstr "<b>شهر:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<b>Name:</b>"
+msgstr "<b>اسم:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "<b>Receipt Number</b>"
+msgstr "<b>عدد إيصال</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<b>Standard:</b>"
+msgstr "<b>اساسي:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "<b>Start Date:</b>"
+msgstr "<b>تاريخ البدء:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "<b>Status:</b>"
+msgstr "<b>حالة:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+msgid "<b>Submission Date:</b>"
+msgstr "<b>تاريخ التقديم:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<b>Year:</b>"
+msgstr "<b>عام:</b>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<strong>Fail</strong>"
+msgstr "<strong>يفشل</strong>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "<strong>Pass</strong>"
+msgstr "<strong>يمر</strong>"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Amount"
+msgstr "كمية"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Assignment Details"
+msgstr "تفاصيل الواجب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+msgid "Assignment Type"
+msgstr "نوع الواجب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Assignments"
+msgstr "تعيينات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment_list
+msgid "Assignments List"
+msgstr "قائمة الواجبات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Attended Date"
+msgstr "تاريخ الحضور"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Author"
+msgstr "مؤلف"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+msgid "Book"
+msgstr "الكتاب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Book Limit"
+msgstr "حد الكتاب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Category"
+msgstr "فئة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Current Year"
+msgstr "السنة الحالية"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+msgid "Date of Return"
+msgstr "تاريخ العودة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable_list
+msgid "Day"
+msgstr "يوم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Description"
+msgstr "وصف"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Division"
+msgstr "قسم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Event Stage"
+msgstr "مرحلة الحدث"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Events"
+msgstr "الأحداث"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Events Details"
+msgstr "تفاصيل الأحداث"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Exam Details"
+msgstr "تفاصيل الامتحان"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Exams"
+msgstr "الامتحانات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr "قائمة الامتحانات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "Exams Schedule"
+msgstr "جدول الامتحانات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "Faculty"
+msgstr "الأساتذه"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Fees"
+msgstr "مصاريف"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Fees Details"
+msgstr "تفاصيل الرسوم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr "قائمة الرسوم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Fees Receipt"
+msgstr "إيصال الرسوم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "From"
+msgstr "من عند"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Genres"
+msgstr "الأنواع"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Grade"
+msgstr "رتبة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Issue Books"
+msgstr "إصدار كتب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr "قائمة القضية"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment_list
+msgid "Issued Date"
+msgstr "تاريخ الإصدار"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Language"
+msgstr "لغة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_list
+msgid "Last Name"
+msgstr "اسم العائلة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Library Details"
+msgstr "تفاصيل المكتبة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Marks Obtained"
+msgstr "العلامات المتحصل عليها"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Membership"
+msgstr "عضوية"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Membership ID"
+msgstr "معرف العضوية"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_list
+msgid "Middle Name"
+msgstr "الاسم الأوسط"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Min Marks"
+msgstr "الحد الأدنى من العلامات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Month"
+msgstr "شهر"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_list
+msgid "Name"
+msgstr "اسم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Particulars"
+msgstr "تفاصيل"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Percentage:"
+msgstr "النسبة المئوية:"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "Periods"
+msgstr "فترات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Receipt Number"
+msgstr "عدد إيصال"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Registration Date"
+msgstr "تاريخ التسجيل"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Result:"
+msgstr "نتيجة:"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Results"
+msgstr "نتائج"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Results List"
+msgstr "قائمة النتائج"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Scored Marks"
+msgstr "علامات مسجلة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Serial Number"
+msgstr "رقم سري"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Standard"
+msgstr "اساسي"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Status"
+msgstr "حالة"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Students"
+msgstr "طلاب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Students Details"
+msgstr "تفاصيل الطلاب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_list
+msgid "Students List"
+msgstr "قائمة الطلاب"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr "اجتياز / فشل الموضوع"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "Subjects"
+msgstr "المواضيع"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Submission Date"
+msgstr "تاريخ التقديم"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Submissions"
+msgstr "التقديمات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "Time"
+msgstr "زمن"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Timetable Details"
+msgstr "تفاصيل الجدول الزمني"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_student_details_list
+msgid "Timetable List"
+msgstr "قائمة الجدول الزمني"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_timetable
+msgid "To"
+msgstr "إلى"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Total"
+msgstr "المجموع"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_submission
+msgid "Total Marks"
+msgstr "مجموع علامات"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Year"
+msgstr "عام"

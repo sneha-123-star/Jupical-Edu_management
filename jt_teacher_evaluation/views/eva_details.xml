@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        
+        <record id="evaluation_form_viewss" model="ir.ui.view">
+            <field name="name">Evaluation Form</field>
+            <field name="model">eval.detail</field>
+            <field name="arch" type="xml">
+                <form string="Evaluation">
+                    <sheet>
+                        <group>
+                            <field name="user_type" required="1"/>
+                            <field name="description" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+     
+        <record id="evaluation_tree_viewss" model="ir.ui.view">
+            <field name="name">Evaluation Tree</field>
+            <field name="model">eval.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Details">
+                    <field name="user_type"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="rating_tree_viewss" model="ir.ui.view">
+            <field name="name">Rating</field>
+            <field name="model">rating.remarks</field>
+            <field name="arch" type="xml">
+                <tree string="Rating" editable="top">
+                    <field name="rate" required="1"/>
+                    <field name="remarks" required='1'/>
+                </tree>
+            </field>
+        </record>
+
+      
+        <record id="action_eval_detail" model="ir.actions.act_window">
+            <field name="name">Evaluation Templates</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">eval.detail</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_rating" model="ir.actions.act_window">
+            <field name="name">Rating</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rating.remarks</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+      
+		<record id="action_student" model="ir.actions.act_window">
+		  <field name="name">Students</field>
+          <field name="domain">[('user_type','=','student')]</field>
+		  <field name="res_model">eval.detail</field>
+		  <field name="view_mode">tree,form</field>
+          <field name="context">{"default_user_type":'student'}</field>
+		</record>
+
+
+        
+        <record id="action_teacher" model="ir.actions.act_window">
+            <field name="name">Teachers</field>
+            <field name="domain">[('user_type','=','teacher')]</field>
+            <field name="res_model">eval.detail</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"default_user_type":'teacher'}</field>
+        </record>
+
+        <record id="action_parent" model="ir.actions.act_window">
+            <field name="name">Parents</field>
+            <field name="domain">[('user_type','=','parent')]</field>
+            <field name="res_model">eval.detail</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"default_user_type":'parent'}</field>
+        </record>
+
+        
+        <menuitem id="evaluation_rating_menu" name="Rating" parent="jt_education_base.configurations_menu" sequence="3" action="action_rating"/>
+        <menuitem id="evaluation_template_menu" name="Evaluation Questions" parent="jt_education_base.configurations_menu" sequence="3"/>
+        <menuitem id="student_submenu" name="Student" parent="evaluation_template_menu" action="action_student"/>
+        <menuitem id="teacher_submenu" name="Teacher" parent="evaluation_template_menu" action="action_teacher"/>
+        <menuitem id="parent_submenu" name="Parent" parent="evaluation_template_menu" action="action_parent"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        <!-- StudentSubject Form View-->
+        <record id="student_subject_form_view" model="ir.ui.view">
+            <field name="name">Student Subject Form View</field>
+            <field name="model">student.subject</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+                		<group>
+                			<group>
+		                		<field name = "code"/>
+		                		<field name = "name"/>
+                                <field name="subject_category_ids" widget="many2many_tags"/>
+		                	</group>
+		                </group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--StudentSubject Tree View-->
+        <record id="student_subject_tree_view" model="ir.ui.view">
+            <field name="name">Student Subject Tree View</field>
+            <field name="model">student.subject</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="code"/>
+                    <field name="name"/>     
+                    <field name="subject_category_ids" widget="many2many_tags"/>                          
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

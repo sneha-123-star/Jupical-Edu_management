@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-17 13:36+0000\n"
+"PO-Revision-Date: 2020-10-17 13:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__absent
+msgid "Absent"
+msgstr "Ausente"
+
+#. module: ae_education_attendance
+#: model:ir.actions.act_window,name:ae_education_attendance.action_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:ae_education_attendance.attendance_menu
+#: model_terms:ir.ui.view,arch_db:ae_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "Asistencia"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "Línea de asistencia"
+
+#. module: ae_education_attendance
+#: model:ir.model.constraint,message:ae_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid ""
+"Attendance for this faculty and standard of this date is already exists !"
+msgstr ""
+"La asistencia a esta facultad y el estándar de esta fecha ya existe!"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__display_name
+msgid "Display Name"
+msgstr "Nombre de pantalla"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__division_id
+msgid "Division"
+msgstr "División"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__faculty_id
+msgid "Faculty"
+msgstr "Facultad"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance____last_update
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line____last_update
+msgid "Last Modified on"
+msgstr "Modificado por última vez el"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__present
+msgid "Present"
+msgstr "Presente"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "Número del rollo"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__standard_id
+msgid "Standard"
+msgstr "Estándar"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_line__student_id
+msgid "Students"
+msgstr "Estudiantes"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "Temas"
+
+#. module: ae_education_attendance
+#: model:ir.model.fields,field_description:ae_education_attendance.field_attendance_attendance__date
+msgid "Today's Date"
+msgstr "La fecha de hoy"
+
+#. module: ae_education_attendance
+#: model:ir.model,name:ae_education_attendance.model_attendance_attendance
+msgid "attendance.attendance"
+msgstr "asistencia.asistencia"
+
+#. module: ae_education_attendance
+#: model:ir.model,name:ae_education_attendance.model_attendance_line
+msgid "attendance.line"
+msgstr "línea de asistencia"

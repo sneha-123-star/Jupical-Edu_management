@@ -1,0 +1,20 @@
+{
+    'name': "Exam Management",
+    'sequence':3,
+    'summary': "Exam Management System",
+    'category': 'Student Exam',
+    'version': '16.0.1.0.0',
+    'depends': ['jt_education_base','jt_education_reports'],
+    'data': [
+        'security/ir.model.access.csv',
+        'demo/demo.xml',
+        'views/action_and_menu.xml',
+        'views/exam_view.xml',
+        'views/subject_view.xml',
+        'views/result_view.xml',
+        'views/grade_view.xml',
+        'reports/result_report.xml',
+    ],
+    'application': True,
+    'license':'OPL-1',
+}

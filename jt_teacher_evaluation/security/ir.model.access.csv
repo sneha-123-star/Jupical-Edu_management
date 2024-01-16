@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+eval_profile_access,eval_access,model_eval_profile,,1,1,1,1
+eval_tab_access,eval_access,model_eval_tab,,1,1,1,1
+eval_detail_access,eval_access,model_eval_detail,,1,1,1,1
+rating_remarks_access,rating_remarks,model_rating_remarks,,1,1,1,1

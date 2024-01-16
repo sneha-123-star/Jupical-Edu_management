@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Demo data for Fees Type -->
+        <record id="fee_type_0" model="fees.type">
+            <field name="name">Main Fee</field>
+        </record>
+
+        <record id="fee_type_1" model="fees.type">
+            <field name="name">Admission Fee</field>
+        </record>
+
+        <record id="fee_type_2" model="fees.type">
+            <field name="name">Monthly Fee</field>
+        </record>
+
+        <record id="fee_type_3" model="fees.type">
+            <field name="name">Term I Fee</field>
+        </record>
+
+        <record id="fee_type_4" model="fees.type">
+            <field name="name">Term II Fee</field>
+        </record>
+
+        <record id="fee_type_5" model="fees.type">
+            <field name="name">Exam Papers Fee (Term I)</field>
+        </record>
+
+        <record id="fee_type_6" model="fees.type">
+            <field name="name">Exam Papers Fee (Term II)</field>
+        </record>
+
+        <record id="fee_type_7" model="fees.type">
+            <field name="name">Activity Fee</field>
+        </record>
+
+        <record id="fee_type_8" model="fees.type">
+            <field name="name">Other Fees</field>
+        </record>
+
+        
+    </data>
+</odoo>

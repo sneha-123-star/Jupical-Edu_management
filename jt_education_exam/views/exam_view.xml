@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- StudentExam Form View-->
+        <record id="student_exam_form_view" model="ir.ui.view">
+            <field name="name">Student Exam Form View</field>
+            <field name="model">student.exam</field>
+            <field name="arch" type="xml">
+                <form string="Exam Details">
+                    <header>
+                        <button name="ongoing_exam" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" class="oe_highlight" string="Confirm"/>
+                        <button name="close_exam" type="object" attrs="{'invisible': [('state', '!=', 'ongoing')]}" string="Completed" confirm="After closing the exam, you can't do valuation. You can close the exam only after the completion of valuation process. Do you want to proceed?"/>
+                        <button name="cancel_exam" type="object" attrs="{'invisible': [('state', '!=', 'draft')]}" string="Cancel"/>
+                        <field name="state" readonly="1" widget="statusbar" statusbar_visible="draft,ongoing,close"/>
+                    </header>
+                    <sheet string="Exam Details">
+                        <group>
+                            <group cols="4">
+                                <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="start_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="end_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="standard" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="division" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="curr_year" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+                                       
+                        <label for="student_ids" string="Student List"/>
+                        <field name="student_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}" widget="many2many" domain="[('standard','=',standard),('div','=',division),('curr_year','=',curr_year)]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="standard"/>
+                                <field name="div"/>
+                                <field name="roll_no"/>
+                            </tree>
+                        </field>
+                        <notebook>
+                            <page string="Subjects">
+                                <field name="subject_line" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1">
+                                    <tree editable="bottom">
+                                        <field name="subject_id"/>
+                                        <field name="date"/>
+                                        <field name="day"/>
+                                        <field name="time_from" widget="float_time"/>
+                                        <field name="time_to" widget="float_time"/>
+                                        <field name="mark"/>
+                                        <field name="exam_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--StudentExam Tree View-->
+        <record id="student_exam_tree_view" model="ir.ui.view">
+            <field name="name">Student Exam Tree View</field>
+            <field name="model">student.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Student Exam">
+                    <field name="name"/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>     
+                </tree>
+            </field>
+        </record>
+
+        <!--StudentExam seachview -->
+        <record id="student_exam_search_view" model="ir.ui.view">
+            <field name="name">Student Exam Search View</field>
+            <field name="model">student.exam</field>
+            <field name="arch" type="xml">
+                <search string="Exam">
+                    <filter string="Start Date" name="filter_start_date" date="start_date"/>
+                    <separator/>
+                    <filter string="End Date" name="filter_end_date" date="end_date"/>
+                    <separator/>
+                    <filter string="On-going" name="filter_ongoing" domain="[('state','=','ongoing')]"/>
+                    <separator/>
+                    <filter string="Completed" name="filter_completed_exam" domain="[('state','=','close')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Exam Type" name="type" domain="[]" context="{'group_by': 'name'}"/>
+                        <filter name="start_date" string="start_date" domain="[]" context="{'group_by': 'start_date'}"/>
+                        <filter string="End Date" name="end_date" domain="[]" context="{'group_by': 'end_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

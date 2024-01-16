@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:10+0000\n"
+"PO-Revision-Date: 2021-10-04 11:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__curr_year
+msgid "Academic Year"
+msgstr "Anno accademico"
+
+#. module: ae_education_timetable
+#: model:ir.ui.menu,name:ae_education_timetable.student_timetable_configuration
+msgid "Configuration"
+msgstr "Configurazione"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__create_uid
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__create_uid
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__create_date
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__create_date
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__create_date
+msgid "Created on"
+msgstr "Creato"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__date
+msgid "Date"
+msgstr "Data"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__week_day
+msgid "Day"
+msgstr "Giorno"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__display_name
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__display_name
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__display_name
+msgid "Display Name"
+msgstr "Nome da visualizzare"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__division
+msgid "Division"
+msgstr "Divisione"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__faculty_id
+msgid "Faculty"
+msgstr "Facoltà"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__4
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Friday"
+msgstr "venerdì"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__time_from
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__time_from
+msgid "From"
+msgstr "A partire dal"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__id
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__id
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable____last_update
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line____last_update
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__write_uid
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__write_uid
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__write_date
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__write_date
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__0
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Monday"
+msgstr "lunedì"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__name
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__name
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Name"
+msgstr "Nome"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__period_id
+msgid "Period"
+msgstr "Periodo"
+
+#. module: ae_education_timetable
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_timetable_period_form
+msgid "Period Time"
+msgstr "Periodo di tempo"
+
+#. module: ae_education_timetable
+#: model:ir.actions.act_window,name:ae_education_timetable.action_student_timetable_period
+#: model:ir.ui.menu,name:ae_education_timetable.student_timetable_period_sub_menu
+msgid "Periods"
+msgstr "periodi"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__5
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Saturday"
+msgstr "il sabato"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__standard
+msgid "Standard"
+msgstr "Standard"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__student_ids
+msgid "Student"
+msgstr "Alunno"
+
+#. module: ae_education_timetable
+#: model:ir.model,name:ae_education_timetable.model_student_timetable
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Student Timetable"
+msgstr "Orario studenti"
+
+#. module: ae_education_timetable
+#: model:ir.model,name:ae_education_timetable.model_student_timetable_line
+msgid "Student Timetable Line"
+msgstr Linea Orario Studenti"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__subject
+msgid "Subjects"
+msgstr "Soggetti"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__6
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Sunday"
+msgstr "Domenica"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__3
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Thursday"
+msgstr "giovedi"
+
+#. module: ae_education_timetable
+#: model:ir.actions.act_window,name:ae_education_timetable.action_student_time_table
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__timetable_id
+#: model:ir.ui.menu,name:ae_education_timetable.student_time_table_main_menu
+#: model:ir.ui.menu,name:ae_education_timetable.student_time_table_sub_menu
+msgid "Timetable"
+msgstr "Orario"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_fri
+msgid "Timetable Fri"
+msgstr "Orario Ven"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_mon
+msgid "Timetable Mon"
+msgstr "Orario Lun"
+
+#. module: ae_education_timetable
+#: model:ir.model,name:ae_education_timetable.model_timetable_period
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_timetable_period_form
+msgid "Timetable Period"
+msgstr "Periodo di orario"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_sat
+msgid "Timetable Sat"
+msgstr "Orario Sab"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_sun
+msgid "Timetable Sun"
+msgstr "Orario Dom"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_thur
+msgid "Timetable Thur"
+msgstr "Orario gio"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_tue
+msgid "Timetable Tue"
+msgstr "Orario mar"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable__timetable_wed
+msgid "Timetable Wed"
+msgstr "Orario mer"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields,field_description:ae_education_timetable.field_student_timetable_line__time_till
+#: model:ir.model.fields,field_description:ae_education_timetable.field_timetable_period__time_to
+msgid "To"
+msgstr "Per"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__1
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Tuesday"
+msgstr "Martedì"
+
+#. module: ae_education_timetable
+#: model:ir.model.fields.selection,name:ae_education_timetable.selection__student_timetable_line__week_day__2
+#: model_terms:ir.ui.view,arch_db:ae_education_timetable.student_time_table_form
+msgid "Wednesday"
+msgstr "mercoledì"
+
+#. module: ae_education_timetable
+#: model_terms:ir.actions.act_window,help:ae_education_timetable.action_student_timetable_period
+msgid "You have'nt created any Periods yet."
+msgstr "Non hai ancora creato alcun periodo."
+
+#. module: ae_education_timetable
+#: model_terms:ir.actions.act_window,help:ae_education_timetable.action_student_time_table
+msgid "You have'nt created any timetable yet."
+msgstr "Non hai ancora creato nessun orario."

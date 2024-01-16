@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+         <template id="attendance_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="result">
+                    <div class="page">
+                            <div style="padding-top:10px;">
+                                <div>
+                                    <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                                </div>
+                                <div style="align:center;text-align:center;">
+                                    <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">Attendance Report</p>
+                                    <p  style="align:center;text-align:center;black;font-size:20px;">
+                                        For Class <span>_________________</span>
+                                        <!-- <span t-esc=""/> -->
+                                    </p>
+                                     <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>From:</strong><span>_________________</span>
+                                     <!-- <span t-field="o.stud_id"/> -->
+                                    <strong>To:</strong><span>_________________</span>
+                                    <!-- <span t-field="o.gr_no"/> -->
+                                    </p>
+                                </div>
+                            </div>
+                        <div class="row"> 
+                            <strong>Responsible Teacher:</strong>                                
+                        </div>
+                  
+
+                        <div class="row">
+                            <p>Name of Teachers</p>
+                        </div>
+                        <div class="container-justify-content-center text-center">
+                        <table class="table table-bordered">
+                          <tr style="margin-right:50px;">
+                            <th>Month</th>
+                            <td colspan="31">December</td>
+                            <td colspan="11">January</td>  
+                            
+                          </tr>                        
+                           <tr >
+                            <th rowspan="2">Dep/Emp</th>
+                            <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                            <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                            <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                            <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                            <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                             <td>M</td>
+                            <td>Tu</td>
+                            <td>W</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td style="color:grey;">Sa</td>
+                            <td style="color:grey;">Su</td>
+                            <th rowspan="2">Sum</th>                         
+                           
+                          </tr>
+                          <tr >
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2">Emp 1</td>    
+                          </tr>
+                          <tr>   
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td> 
+                          </tr> 
+                          <tr>
+                            <td rowspan="2">Emp 2</td>    
+                          </tr>
+                          <tr>   
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>  
+  
+                          </tr>
+                          <tr>
+                            <td rowspan="2">Emp 3</td>    
+                          </tr>
+                          <tr>   
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td> 
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>  
+  
+                          </tr>
+                          <tbody>
+                            <t t-set="total_days" t-value="42" />
+                            <t t-set="total_sum" t-value="0" />
+
+                            <t t-foreach="result.attendance_ids" t-as="employee">
+                                <tr>
+                                    <td rowspan="2"><t t-esc="employee.name"/></td>
+                                    <t t-set="employee_sum" t-value="0" />
+                                    <t t-foreach="range(1, total_days + 1)" t-as="day">
+                                        <td>
+                                            <t t-esc="employee['day_' + str(day)]"/>
+                                            <t t-set="employee_sum" t-value="employee_sum + employee['day_' + str(day)]"/>
+                                        </td>
+                                    </t>
+                                    <td rowspan="2"><t t-esc="employee_sum"/></td>
+                                </tr>
+                                <tr>
+                                    <t t-foreach="range(1, total_days + 1)" t-as="day">
+                                        <!-- Additional content for the second row -->
+                                    </t>
+                                </tr>
+                                <t t-set="total_sum" t-value="total_sum + employee_sum"/>
+                            </t>
+
+                            <tr>
+                                <td><strong>Total:</strong></td>
+                                <t t-foreach="range(1, total_days + 1)" t-as="day">
+                                    <td><t t-esc="sum(employee['day_' + str(day)] for employee in result.attendance_ids)"/></td>
+                                </t>
+                                <td><t t-esc="total_sum"/></td>
+                            </tr>
+                        </tbody>
+
+                     
+                          
+                        </table>
+                    </div>
+
+                    </div>
+                </t>
+            </t>
+
+        </template>
+
+
+
+        <record id="attendance_report_template_paperformate" model="report.paperformat">
+            <field name="name">student.attendance.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_attendance_report" model="ir.actions.report">
+            <field name="name">Attendance</field>
+            <field name="model">attendance.attendance</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_attendance.attendance_report_template</field>
+            <field name="report_file">jt_education_attendance.attendance_report_template</field>
+            <field name="paperformat_id" ref="jt_education_attendance.attendance_report_template_paperformate"/>
+            <field name="print_report_name">"Attendance Report"</field>
+            <field name="binding_model_id" ref="jt_education_attendance.model_print_attendance"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
