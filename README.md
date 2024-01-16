@@ -1,0 +1,1 @@
+# Jupical-Edu_management
