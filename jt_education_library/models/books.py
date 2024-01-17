@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    AtharvERP Business Solutions
-#    Copyright (C) 2020-TODAY AtharvERP Business Solutions(<http://www.atharverp.com>).
-#    Author: AtharvERP Business Solutions(<http://www.atharverp.com>)
+#    Jupical Technologies Pvt. Ltd.
+#    Copyright (C) 2018-TODAY Jupical Technologies(<http://www.jupical.com>).
+#    Author: Jupical Technologies Pvt. Ltd.(<http://www.jupical.com>)
 #    you can modify it under the terms of the GNU LESSER
 #    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
 #
