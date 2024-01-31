@@ -53,23 +53,24 @@ class ExamResult(models.Model):
     pass_fail_full = fields.Boolean(
         string='Pass/Fail', store=True, readonly=True, compute='_total_marks_all')
     percentage = fields.Float('Percentage',compute='_compute_percentage') 
+    input_line = fields.Char("Note")
+    faculty_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], required=True)
+    parent_id = fields.Many2one('res.partner', domain=[('is_parent', '=', True)], required=True)
+    english_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], string="English Teacher")
+    chineses_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], string="Chinese Teacher")
+    lao_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], string="Lao Teacher")
+
+
 
     @api.onchange('exam_id')
     def _onchange_exam_id(self):
         subject_line_data = [(5, 0, 0)]
         for subject_line in self.exam_id.subject_line:
-            categ_line = [(5, 0, 0)]
-            for categ in  subject_line.subject_id.subject_category_ids:            
-                line = (0, 0, {
-                    'subject_for_id': subject_line.subject_id.id,
-                'name':categ.name ,
-                    'mark': categ.mark,
-                })
-                categ_line.append(line)
             line = (0, 0, {
             'subject_id': subject_line.subject_id.id,
-            'subject_category_ids': categ_line,
+            'subject_category_ids': [(6, 0, subject_line.subject_id.subject_category_ids.ids)],
             'exam_id':self.exam_id.id,
+            'student_id':self.student_id.id,
             })
             subject_line_data.append(line)
         self.subject_line = subject_line_data
@@ -105,19 +106,20 @@ class ExamResult(models.Model):
 
 class ResultSubjectLine(models.Model):
     _name = 'result.subject.line'
-
+    _description = "Result Subject Line"
     
-    mark = fields.Float('Marks')
-    pass_mark = fields.Float('Passing Marks')
-    mark_scored = fields.Float('Marks Scored')
-    pass_or_fail = fields.Boolean('Pass/Fail')
+    mark = fields.Float('Marks',compute="_compute_category_marks")
+    pass_mark = fields.Float('Passing Marks',compute="_compute_category_marks")
+    mark_scored = fields.Float('Marks Scored',compute="_compute_category_marks")
+    pass_or_fail = fields.Boolean('Pass/Fail',compute="_compute_category_marks")
     result_id = fields.Many2one('student.result', string='Result Id')
+    percentage = fields.Float('Percentage',compute="_compute_category_marks")
 
     exam_id = fields.Many2one('student.exam', string='Exam')
     grade_id = fields.Many2one('result.grade', string="Grade")
     standard = fields.Many2one(related="student_id.standard")
     division = fields.Many2one(related="student_id.div")
-    student_id = fields.Many2one('res.partner', string='Student', domain=[('is_student', '=', True)])
+    student_id = fields.Many2one('res.partner', string='Student',related="result_id.student_id",store=True)
     subject_category_ids = fields.One2many("subject.category", 'subject_line_id', string="Subject categories")
     academic_year = fields.Many2one(related='student_id.curr_year', store=True)
 
@@ -126,16 +128,30 @@ class ResultSubjectLine(models.Model):
     ]
 
     exam_id = fields.Many2one('student.exam', string='Exam', store=True)
-    grade_id = fields.Many2one('result.grade',string="Grade")
+    grade_id = fields.Many2one('result.grade',string="Grade",compute="get_grade_id")
     standard = fields.Many2one(related="student_id.standard")
     division = fields.Many2one(related="student_id.div")
-    student_id = fields.Many2one('res.partner', string='Student', domain=[
-                                 ('is_student', '=', True)],store=True)
+    # student_id = fields.Many2one('res.partner', string='Student', domain=[
+    #                              ('is_student', '=', True)],store=True)
     subject_category_ids = fields.One2many("subject.category",'subject_line_id',string="Subject categories")
     academic_year = fields.Many2one(related='student_id.curr_year', store=True)
     subject_id = fields.Many2one('student.subject', string='Subject',required=True,)
 
-    @api.depends('subject_id','subject_category_ids','pass_mark','mark_scored')
+    @api.depends('percentage')
+    def get_grade_id(self):
+        grade_ids = self.env['result.grade'].search([])
+        for line in self:
+            for grade in grade_ids:
+                grade_data = grade.mark_range.split('-')
+                if int(line.percentage) in range(int(grade_data[0]),int(grade_data[1])):
+                    line.grade_id = grade.id
+                    break;
+                else:
+                    line.grade_id =False
+
+
+
+    @api.depends('subject_id','subject_category_ids','pass_mark','mark_scored','mark')
     def _compute_category_marks(self):
         for total_category in self:
             cat_mark = 0
@@ -148,7 +164,8 @@ class ResultSubjectLine(models.Model):
             total_category.mark =  cat_mark
             total_category.pass_mark = cat_pass_mark
             total_category.mark_scored = cat_mark_scored
-            if cat_mark_scored >= 40.00:
+            total_category.percentage = cat_mark_scored *cat_mark /100
+            if total_category.percentage >= 40.00:
                 total_category.pass_or_fail = True
             else:
                 total_category.pass_or_fail = False
@@ -168,17 +185,8 @@ class ResultSubjectLine(models.Model):
     @api.onchange('subject_id')
     def onchange_subject_id(self):
                
-        categ_line = [(5, 0, 0)]
+        self.subject_category_ids =  [(6, 0, self.subject_id.subject_category_ids.ids)]
 
-        for categ in self.subject_id.subject_category_ids:
-            line = (0, 0, {
-                'subject_for_id': self.subject_id.id,
-                'name': categ.name,
-                'mark': categ.mark,
-            })
-            categ_line.append(line)
-
-        self.subject_category_ids = categ_line
 
 class Grade(models.Model):
     _name = 'result.grade'

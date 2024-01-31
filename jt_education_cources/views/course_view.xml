@@ -6,20 +6,33 @@
             <field name="model">course.course</field>
             <field name="arch" type="xml">
                 <form string="Course Details">
-                    <header>
-                        <!-- <button name="confirm_reservation_inq" string="Confirm" states="draft" class="oe_highlight" type="object"/>
-                        <button name="cancel_reservation_inq" string="Cancel" states="draft" class="oe_highlight" type="object"/> -->
-                        <field name="state" widget="statusbar"/>
+                        <header>
+                        <button name="act_publish" states="draft"
+                                type="object" string="Publish"
+                                class="oe_highlight"/>
+                        <button name="act_set_to_draft" states="publish"
+                                type="object" string="Set to Draft"
+                                class="oe_highlight"/>
+                        <button name="act_finish" class="oe_highlight"
+                                states="publish" type="object" string="Finish"/>
+                        <button name="act_cancel" states="publish"
+                                type="object" string="Cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,publish,finish,cancel"/>
                     </header>
-                    <sheet>
-                        <group>
-                            <field name="name"/>
-                            <field name="description"/>
-                            <field name="fee"/>
-                            <field name="rating" widget="priority"/>
-                             <field name="img" widget="image"
-                               class="oe_avatar oe_left"/>
-                        </group>
+                    <sheet>                        
+                    <group>
+                    <group>                                                 
+                        <!-- <field name="img" widget="image"  class="oe_avatar"  nolabel="1"/>                             -->
+                        <field name="name"/>
+                        <field name="fee"/>                       
+                        <field name="rating" widget="priority"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="img" widget="image"  class="oe_avatar" style="margin-left: 915px;" nolabel="1"/>
+                    </group>                      
+                    </group>
+
                     </sheet>
                 </form>
             </field>

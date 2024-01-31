@@ -16,13 +16,17 @@
 							<group>
 								<field name="date"/>
 								<field name="subject_id" widget="many2many_tags"/>
+								<button string="AddStudentline" name="add_data" type="object" class="btn-primary" style="margin-top:20px;"/>
 							</group>
 						</group>
 						<notebook>
                             <page string="Attendance">
-                            	<group>
-                            		<button string="select All" name="select_all_line" type="object" class="btn-primary"/>
-                            	</group>
+                               <button string="select All" name="select_all_line" type="object" class="btn-primary" style="margin-top:20px;"/>
+                               <button string="Present" name="present_student" type="object" class="btn-primary" style="margin-right:150px;"/>
+                               <button string="Absence Reason" name="absence_reason_student" type="object" class="btn-primary"/>
+                               <button string="Absence No  Reason" name="absence_noreason_student" type="object" class="btn-primary"/>
+                               <button string="Late" name="late_student" type="object" class="btn-primary"/>
+                               <button string="Withdraw" name="withdraw_student" type="object" class="btn-primary" style="margin-left:500px;"/>
                                 <field name="attendance_ids">
                                     <tree editable="bottom">
                                     	<field name="attendance_id" invisible='1'/>
@@ -33,13 +37,15 @@
 										    options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}"
 										    domain="[('is_student', '=', True), ('standard','=',standard_id), ('div','=',division_id)]" required='1'
 										/>
-										<field name="name"/>
+										<field name="standard_id"/>
+										<field name="division_id"/>
                                         <field name="roll_no"/>
 										<field name="present"/>
                                         <field name="absence_reason"/>
                                         <field name="absence_noreason"/>
 										<field name="late"/>
 										<field name="withdraw"/>
+										<field name="date" />
                                     </tree>
                                 </field>
                             </page>
@@ -57,9 +63,23 @@
 					<field name="faculty_id"/>
 					<field name="standard_id"/>
 					<field name="division_id"/>
+					<field name="date" readonly="1"/>
 				</tree>
 			</field>
 		</record>
+
+ 		<record id="view_attendance_line_graph" model="ir.ui.view">
+		        <field name="name">attendance.line.graph</field>
+		        <field name="model">attendance.line</field>
+		        <field name="arch" type="xml">
+		        	<graph string="Attendance Graph" type="bar">
+                		<field name="attendance_id" type="measure"/>
+                		<field name="date"/>
+            		</graph>
+		        </field>
+		</record>
+
+
 
 		<!-- attendance action view -->
         <record id="action_attendance" model="ir.actions.act_window">
@@ -67,8 +87,14 @@
             <field name="res_model">attendance.attendance</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id="action_report" model="ir.actions.act_window">
+            <field name="name">Attendance Reporting</field>
+            <field name="res_model">attendance.line</field>
+            <field name="view_mode">graph,form</field>
+        </record>
 
         <menuitem name="Attendance" id="attendance_menu" action="action_attendance" parent="jt_education_base.student_root_menu" sequence="2"/>
+        <menuitem name="Attendance Reporting" id="attendance_report_menu" action="action_report" parent="jt_education_base.student_root_menu" sequence="6"/>
 
 	</data>
 </odoo>

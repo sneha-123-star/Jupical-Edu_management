@@ -24,6 +24,7 @@ from odoo import api, fields, models,_
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
+    _description = "Sale Order"
 
     fees_id = fields.Many2one('fees.fees',string="Fees Ref")
 
@@ -35,3 +36,9 @@ class SaleOrder(models.Model):
             fees = self.env['fees.fees'].search([('id','=',sale.fees_id.id)],limit=1)
             fees.update({'state':'invoice','payment_state':'not_paid'})
         return res
+
+
+    @api.model
+    def action_validate(self):
+        
+        self.write({'state': 'validated'})

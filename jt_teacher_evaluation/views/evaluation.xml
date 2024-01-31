@@ -42,10 +42,11 @@
 						
 						<notebook>
                             <page string="Question List">
-                                <field name="tab_ids" attrs="{'readonly':[('state','not in',['publish'])]}">
+                                <field name="tab_ids"  attrs="{'readonly':[('state','not in',['publish'])]}">
                                     <tree editable="bottom">
                                     	<field name="tab_id" invisible='1'/>
-                                    	<field name="question_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                                    	<field name="user_type" invisible='1'/>
+                                    	<field name="question_id" domain="[('user_type','=',user_type)]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
 										<field name="rating_id"/>
                                         <field name="remarks"/>
                                     </tree>

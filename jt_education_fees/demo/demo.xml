@@ -40,5 +40,61 @@
         </record>
 
         
+        
+    </data>
+    <data>      
+
+        <record id="fee1" model="student.standard">
+            <field name="name">FY - BCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee2" model="student.standard">
+            <field name="name">SY - BCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee3" model="student.standard">
+            <field name="name">TY - BCA</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee4" model="student.standard">
+            <field name="name">FY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee5" model="student.standard">
+            <field name="name">SY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee6" model="student.standard">
+            <field name="name">TY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee7" model="student.standard">
+            <field name="name">FY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee8" model="student.standard">
+            <field name="name">SY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee9" model="student.standard">
+            <field name="name">TY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee10" model="student.standard">
+            <field name="name">FY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee11" model="student.standard">
+            <field name="name">SY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee12" model="student.standard">
+            <field name="name">TY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+
     </data>
 </odoo>

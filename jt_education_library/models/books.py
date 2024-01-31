@@ -21,6 +21,8 @@
 #
 ##############################################################################
 from odoo import models, fields, api
+from odoo.tools.translate import CodeTranslations
+
 
 
 class Books(models.Model):
@@ -85,8 +87,12 @@ class Books(models.Model):
         for rec in self:
             rec.no_of_books_available = rec.no_of_books - (rec.no_of_books_issued + rec.no_of_books_lost)
 
+    
+
 class BookLanguage(models.Model):
     _name = 'book.language'
 
-    name = fields.Char(string="Name")
-    
+    lang = fields.Selection(selection='_get_languages', string='Language', validate=False)
+
+    def _get_languages(self):
+        return self.env['res.lang'].get_installed()

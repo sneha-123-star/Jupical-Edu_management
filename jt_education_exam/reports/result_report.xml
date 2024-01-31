@@ -44,16 +44,61 @@
                                             <div style="align:right;text-align:right;padding-left:200px;">
                                                 <table class="table table-bordered" style="border:solid 1px; border-color:black;width:450px;">
                                                     <tr>
-                                                        <td style="width:150px;">
-                                                            Day of Study
-                                                        </td>
-                                                        <td>
-                                                        </td>
-                                                         <td rowspan="4">
+                                                       <t t-if="result.student_id.health_lines">
+                                                            <td>
+                                                                Blood group
+                                                            </td>
+                                                            <td>
+                                                                <t t-esc="result.student_id.health_lines[0].blood_group"/>
+                                                            </td>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <td>
+                                                                Blood group
+                                                            </td>
+                                                            <td>
+                                                                
+                                                            </td>
+                                                        </t>
+                                                         <td rowspan="8">
                                                             <div style="text-align:center;">
-                                                             <img t-att-src="image_data_uri(result.student_id.image_1920)" style="margin-bottom:-60px;height:150px;width:150px;"/>
+                                                                <t t-if="result.student_id.image_1920">
+                                                                    <img t-att-src="image_data_uri(result.student_id.image_1920)" style="margin-bottom:-60px;height:180px;width:180px;"/>
+                                                                </t>    
                                                             
                                                             </div>
+                                                        </td>
+                                                    </tr>
+                                                    <!--  <t t-if="len(result.student_id.health_lines) &gt; 0">   
+                                                        <tr>
+                                                            
+                                                        </tr>
+                                                    </t> -->
+                                                    <t t-if="len(result.student_id.health_lines) &gt; 0">   
+                                                        <tr>
+                                                            <td>
+                                                                Height
+                                                            </td>
+                                                             <td>
+                                                                <t t-esc="result.student_id.health_lines[0].height"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                   <t t-if="len(result.student_id.health_lines) &gt; 0">   
+                                                        <tr>
+                                                            <td>
+                                                                Weight
+                                                            </td>
+                                                             <td>
+                                                                <t t-esc="result.student_id.health_lines[0].weight"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                    <tr>
+                                                        <td>
+                                                            Day Of Study
+                                                        </td>
+                                                         <td>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -88,7 +133,7 @@
                                         <div class="col-12">
                                             <b style="font-size:25px;">
                                             <t t-esc="count_subjectline"/>
-                                            <t t-esc="subject.subject_id.name"/></b>
+                                            <t t-esc="subject.subject_id.subject_category_ids.name"/></b>
 
                                             <t t-set="count_subjectline" t-value='count_subjectline+1'/>
                                             <table class="table table-bordered" style="border:solid 1px; border-color:black;width:1300px;text-align:center;margin-bottom:20px;margin-top:10px;">
@@ -114,9 +159,9 @@
                                             </tr>
                                             <tr style="height:48px;">
                                                 <td style="transform:rotate(269deg);">
-                                                   Subject Category
+                                                   Subject 
                                                 </td>
-                                                 <t t-foreach="subject.subject_id.subject_category_ids" t-as="categ">
+                                                 <t t-foreach="subject.subject_id" t-as="categ">
 
                                                     <td>
                                                         
@@ -170,186 +215,7 @@
                                     </div>
                                     </t>
                                     <div class="row" style="margin-bottom:20px;margin-top:10px;">
-                                        <!-- <div class="col-6">
-                                            2.English
-                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;height:120px;width:700px;text-align:center;margin-bottom:20px;margin-top:10px;">
-                                                <tr>
-                                                    <td>
-                                                        No
-                                                    </td>
-                                                    <td>
-                                                        1
-                                                    </td>
-                                                    <td>
-                                                        2
-                                                    </td>
-                                                    <td>
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                    <td rowspan="2">
-                                                        Total ...
-                                                    </td>
-                                                    <td rowspan="2">
-                                                        Final ...
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Subject 
-                                                    </td>
-                                                    <td>
-                                                        Listninng
-                                                    </td>
-                                                    <td>
-                                                        Speaking
-                                                    </td>
-                                                    <td>
-                                                        Reading
-                                                    </td>
-                                                    <td>
-                                                        Writing
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Standard Score
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        40
-                                                    </td>
-                                                    <td>
-                                                        100%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Actual Score
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        20
-                                                    </td>
-                                                    <td>
-                                                        50%
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                             3.Chinese
-                                            <table class="table table-bordered" style="border:solid 1px; border-color:black;height:120px;width:700px;text-align:center;margin-top:10px;">
-                                                <tr>
-                                                    <td>
-                                                        No
-                                                    </td>
-                                                    <td>
-                                                        1
-                                                    </td>
-                                                    <td>
-                                                        2
-                                                    </td>
-                                                    <td>
-                                                        3
-                                                    </td>
-                                                    <td>
-                                                        4
-                                                    </td>
-                                                    <td rowspan="2">
-                                                        Total ...
-                                                    </td>
-                                                    <td rowspan="2">
-                                                        Final ...
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Subject 
-                                                    </td>
-                                                    <td>
-                                                        Listninng
-                                                    </td>
-                                                    <td>
-                                                        Speaking
-                                                    </td>
-                                                    <td>
-                                                        Reading
-                                                    </td>
-                                                    <td>
-                                                        Writing
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Standard Score
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        10
-                                                    </td>
-                                                    <td>
-                                                        40
-                                                    </td>
-                                                    <td>
-                                                        100%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Actual Score
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        5
-                                                    </td>
-                                                    <td>
-                                                        20
-                                                    </td>
-                                                    <td>
-                                                        50%
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div> -->
+                                        
                                         <div class="col-12">
                                             <b style="font-size:25px;">Grade Distribution</b>
                                             <table class="table table-bordered" style="text-align:center;border:solid 1px; border-color:black;width:500px;height:150px;margin-left:100px;margin-top:20px;">
@@ -392,22 +258,45 @@
                                                         Teacher's correction and suggestion
                                                     </td>
                                                 </tr>
-                                                <t t-set="teacher_count" t-value='1'/>
-                                                <t t-foreach="result.subject_line" t-as="subject">
-                                                    <tr>
-                                                        <td>
-                                                           <t t-esc="teacher_count"/>
-                                                        </td>
-                                                        <t t-set="teacher_count" t-value='teacher_count+1'/>
-                                                        <td >
-                                                            <t t-esc="subject.subject_id.name"/>
-                                                             Teacher
-                                                        </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </t>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Lao Teacher</td>
+                                                    <td>  
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="result.lao_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>English Teacher</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <t t-esc="result.english_id.name"/>
+                                                    </td>
+                                                </tr>  
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Chinese Teacher</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <t t-esc="result.chineses_id.name"/>
+                                                    </td>
+                                                </tr>  
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Parent</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <t t-esc="result.parent_id.name"/>
+                                                    </td>
+                                                </tr>      
                                             </table>
+                                        </div>
+                                        <div style="text-align:center">
+                                            <b style="font-size:20px; margin-top:10px;">Note:-</b>
+                                            <t t-esc="result.input_line"/>
+
                                         </div>
                                         
                                    
@@ -476,16 +365,6 @@
             <field name="binding_type">report</field>
         </record>
 
-        <!-- <report 
-            id="action_result_report"
-            model="student.result"
-            string="Result"
-            report_type="qweb-pdf"
-            name="ae_education_exam.result_report_template"
-            file="ae_education_exam.result_report_template"
-            print_report_name="object.student_id.name"
-            paperformat="ae_education_exam.result_report_template_paperformate"
-        /> -->
-
+        
     </data>
 </odoo> 

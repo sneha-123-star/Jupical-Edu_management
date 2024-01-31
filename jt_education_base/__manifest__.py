@@ -34,6 +34,7 @@
         'views/student_view.xml',
         'views/district_view.xml',
         'views/village_view.xml',
+        'views/province_view.xml',
         'views/student_standard_view.xml',
         'views/faculty_view.xml',
         'views/parent_view.xml',

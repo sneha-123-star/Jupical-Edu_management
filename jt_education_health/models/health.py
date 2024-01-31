@@ -50,6 +50,9 @@ class JtHealth(models.Model):
     health_line = fields.One2many(
         'health.health.line', 'health_id', 'Checkup Lines')
 
+    
+
+
     @api.constrains('height', 'weight')
     def check_height_weight(self):
         if self.height <= 0.0 or self.weight <= 0.0:

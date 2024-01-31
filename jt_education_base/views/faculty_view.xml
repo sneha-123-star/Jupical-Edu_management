@@ -87,8 +87,8 @@
                                 </group>
                                 <group>
                                     <field name="birthdate" required="1"/>
-                                    <field name="age" readonly="1"/>
-                                    <field name="detailed_age" readonly="1"/>
+                                    <field name="age" />
+                                    <field name="detailed_age"/>
                                     <field name="birthPlace"/>
                                 </group>
                             </group>

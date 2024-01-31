@@ -31,6 +31,7 @@
         'security/ir.model.access.csv',        
         'views/evaluation.xml',
         'views/eva_details.xml',
+        'views/custom_layout.xml',
         'reports/eval_rep.xml'
 
     ],

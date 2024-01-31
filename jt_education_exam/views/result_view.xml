@@ -26,12 +26,13 @@
                                 <field name="subject_line">
                                     <tree>
                                         <field name="subject_id"/>
-                                        <field name="mark" sum="Total"/>
-                                        <field name="pass_mark" sum="Total"/>
-                                        <field name="mark_scored" sum="Total"/>
+                                        <field name="mark" sum="Total" readonly='1'/>
+                                        <field name="pass_mark" sum="Total" readonly='1'/>
+                                        <field name="mark_scored" sum="Total" readonly='1'/>
+                                        <field name="percentage"/>
                                         <field name="grade_id"/>
-                                        <field name="exam_id"/>
-                                        <field name="student_id"/>
+                                        <field name="exam_id" invisible='1'/>
+                                        <field name="student_id" invisible='1' force_save="1"/>
                                         <field name="pass_or_fail" widget="boolean_toggle" readonly="1"/>
                                         <field name="result_id" invisible="1"/>
                                     </tree>
@@ -44,7 +45,7 @@
                                                 <field name="mark_scored"/>
                                                 <field name="grade_id"/>
                                                 <field name="exam_id"/>
-                                                <field name="student_id"/>
+                                                <field name="student_id" />
                                                 <field name="pass_or_fail" widget="boolean_toggle"/>
                                             </group>
                                         </sheet>
@@ -54,8 +55,8 @@
                                                         <tree  delete='0' create='0' editable="bottom">
                                                             <field name="name" readonly='1'/>
                                                             <field name="mark" readonly='1'/>
+                                                            <field name="pass_mark" readonly='1' sum="Total"/>
                                                             <field name="actual_mark" sum="Total"/>
-                                                            <field name="pass_mark" sum="Total"/>
                                                         </tree>
                                                     </field>
                                             </page>
@@ -68,8 +69,28 @@
                                     <field name="pass_fail_full" widget="boolean_toggle"/>
                                 </group>
                                 <div class="oe_clear"/>
+                                <group>
+                                     <field name="input_line" style="width:50%;"/>
+                                </group>
                             </page>
+
                         </notebook>
+                        <h4>Teacher Comment</h4><br/>
+                        <group>
+
+                            <group>
+                                <!-- <field name="faculty_id" style="width:50%;"/> -->
+                                <field name="lao_id" style="width:50%;"/>
+                                <field name="english_id" style="width:50%;"/>
+                                <field name="chineses_id" style="width:50%;"/>
+                                <field name="parent_id" style="width:50%;"/>
+
+                            </group>
+
+
+                        </group>
+
+
                     </sheet>
                 </form>
             </field>
@@ -113,8 +134,8 @@
             <field name="arch" type="xml">
             <pivot string="Result" sample="1">
                 <field name="student_id" type="row"/>
-                <field name="mark" type="measure"/>
-                <field name="mark_scored" type="measure"/>
+                <field name="mark"/>
+                <field name="mark_scored"/>
                 <field name="result_id" type="measure"/>
                 <field name="exam_id" type="measure"/>
             </pivot>

@@ -26,11 +26,13 @@ from datetime import datetime,date
 class Evaluation(models.Model):
 
     _name = 'eval.profile'
+    _description = "Evaluation Profile"
 
     name = fields.Char('Name' ,required=True)
     teacher_id = fields.Many2one('res.partner', string='Teacher',domain=[('is_faculty', '=', True)])
     date = fields.Date(string="Evaluation Date",default=fields.Date.today())
-    user_type = fields.Selection([('student', 'Student'),('teacher', 'Teacher'),('parent', 'Parent')],default='teacher')
+    user_type = fields.Selection([('student', 'Student'),('teacher', 'Teacher'),('parent', 'Parent')], default='teacher')
+
     user_id = fields.Many2one('res.users', 'User')
     state = fields.Selection([
         ('draft', 'Draft'), ('publish', 'In Progress'),
@@ -40,11 +42,14 @@ class Evaluation(models.Model):
     student_id = fields.Many2one('res.partner', string='Student',domain=[('is_student', '=', True)])
     parent_id = fields.Many2one('res.partner', string='Parent',domain=[('is_parent', '=', True)])
     total = fields.Float("Total",compute="_compute_total_eval")
+    company_id = fields.Many2one("res.company",default=lambda x:x.env.user.company_id.id)
 
     @api.depends('tab_ids')
     def _compute_total_eval(self):
-        for question in self.tab_ids:
-            self.total += question.rating_id.rate
+        for record in self:
+            record.total = 0  
+            for question in record.tab_ids:
+                record.total += float(question.rating_id.rating)
 
     def act_publish(self):
         result = self.state = 'publish'
@@ -63,8 +68,10 @@ class Evaluation(models.Model):
 class Tabs(models.Model):
 
     _name = 'eval.tab'
+    _description = "Evaluation Tab"
 
     tab_id = fields.Many2one('eval.profile',string="General")
     question_id = fields.Many2one('eval.detail',string="Questions")
     rating_id = fields.Many2one("rating.remarks",string="Ratings")
     remarks = fields.Selection([('poor','Poor'),('average','Average'),('good','Good'),('very_good','Very Good'),('excellent','Excellent')],string="Comments",related="rating_id.remarks")
+    user_type = fields.Selection([('student', 'Student'),('teacher', 'Teacher'),('parent', 'Parent')],related='tab_id.user_type')

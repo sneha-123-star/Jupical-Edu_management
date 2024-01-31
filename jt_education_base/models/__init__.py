@@ -22,6 +22,7 @@
 ##############################################################################
 from . import district
 from . import village
+from . import province
 from . import student
 from . import faculty
 from . import parent

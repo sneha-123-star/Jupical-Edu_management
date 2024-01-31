@@ -10,4 +10,5 @@
             records.action_create_student_so()
         </field>
     </record>
+    
 </odoo>

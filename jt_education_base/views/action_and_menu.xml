@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data>
+    <data>
 
-	   <!--Student action -->
+       <!--Student action -->
         <record model="ir.actions.act_window" id="action_student">
             <field name="name">Students</field>
             <field name="res_model">res.partner</field>
@@ -131,18 +131,25 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <!--  Province Action View  -->
+        <record id="action_province" model="ir.actions.act_window">
+            <field name="name">Student Province</field>
+            <field name="res_model">province.province</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <menuitem name="Education" id="root_menu" web_icon="jt_education,static/description/icon.png"/>
 
         <menuitem name="Students" id="student_root_menu" parent="root_menu" sequence="1" groups="jt_education_base.group_principle,jt_education_base.group_faculty"/>
 
         <menuitem name="Students" id="student_menu" action="action_student" parent="student_root_menu" sequence="1"/>
 
-
         <menuitem name="Configurations" id="configurations_menu" parent="root_menu" sequence="7"/>
 
         <menuitem name="Student" id="configurations_stud" parent="configurations_menu" sequence="7"/>
 
         <menuitem name="Standard" id="studentstandard_submenu" action="action_studentstandard" parent="configurations_stud"/>
+        
         <menuitem name="How Know" id="howknow_menu" action="action_howknow" parent="configurations_stud" sequence="1"/>
 
         <menuitem name="Division" id="studentdivision_submenu" action="action_studentdivision" parent="configurations_stud"/>
@@ -162,5 +169,7 @@
         <menuitem name="District" id="studentdistrict_submenu" action="action_district" parent="configurations_add"/>
         
         <menuitem name="Village" id="studentvillage_submenu" action="action_village" parent="configurations_add"/>
+
+        <menuitem name="Province" id="studentprovince_submenu" action="action_province" parent="configurations_add"/>
     </data>
 </odoo>

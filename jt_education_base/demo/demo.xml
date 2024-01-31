@@ -4,11 +4,7 @@
         <!-- Demo data for standard -->
         <record id="standard_1" model="student.standard">
             <field name="name">1</field>
-        </record>
-
-        <record id="standard_13" model="student.standard">
-            <field name="name">BCA(FY)</field>
-        </record>
+        </record>        
 
         <record id="standard_2" model="student.standard">
             <field name="name">2</field>
@@ -49,7 +45,8 @@
         </record>
         <record id="standard_12" model="student.standard">
             <field name="name">12</field>
-        </record>
+        </record>        
+        
 
         <!-- Demo data for academic year -->
         <record id="year_1" model="year.year">

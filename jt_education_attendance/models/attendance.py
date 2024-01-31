@@ -24,6 +24,7 @@ from odoo import fields, models, api, exceptions, _
 
 class Attendance(models.Model):
     _name = 'attendance.attendance'
+    _description = "Student Attendance"
 
     faculty_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], required=True)
     standard_id = fields.Many2one('student.standard', required=True)
@@ -34,13 +35,17 @@ class Attendance(models.Model):
     student_id = fields.Many2one('res.partner', string="Students", domain=[('is_student', '=', True)])
 
 
+
     _sql_constraints = [
         ('code_faculty_id_uniq', 'unique(subject_id,standard_id,date)', "Attendance for this faculty and standard already exists!")
     ]   
 
     def select_all_line(self):
+        all_selected = all(line.selected for line in self.attendance_ids)
+
         for line in self.attendance_ids:
-            line.selected = True
+            line.selected = not all_selected
+            
 
     def name_get(self):
         res = []
@@ -48,22 +53,77 @@ class Attendance(models.Model):
             res.append((rec.id, '%s - %s(%s)' % (rec.faculty_id.name, rec.standard_id.name, rec.division_id.name)))
         return res
 
+    def present_student(self):
+        if self.attendance_ids:
+            for line in self.attendance_ids.filtered(lambda x:x.selected):
+                if line.absence_reason == True or line.absence_noreason == True:
+                    line.present = False
+                else:
+                    line.present = True
+
+    def absence_noreason_student(self):
+        if self.attendance_ids:
+            for line in self.attendance_ids.filtered(lambda x:x.selected):
+                if line.present == False and line.absence_reason == False:
+                    line.absence_noreason = True            
+
+    def absence_reason_student(self):
+       for line in self.attendance_ids.filtered(lambda x:x.selected):
+                if line.present == False and line.absence_noreason == False:
+                    line.absence_reason = True
+
+
+    def withdraw_student(self):
+        if self.attendance_ids:
+            for line in self.attendance_ids.filtered(lambda x:x.selected):
+                if line.absence_reason == True or line.absence_noreason == True:
+                    line.withdraw = False
+                else:
+                    line.withdraw = True
+
+                    
+    def late_student(self):
+        if self.attendance_ids:
+            for line in self.attendance_ids.filtered(lambda x:x.selected):
+                if line.absence_reason == True or line.absence_noreason == True:
+                    line.late = False
+                else:
+                    line.late = True
+
+    
+    def add_data(self):
+        stud_ids = []
+        if self.attendance_ids:
+            for line in self.attendance_ids:
+                stud_ids.append(line.student_id.id)
+        students = self.env['res.partner'].search([('is_student', '=', True), ('standard','=',self.standard_id.id), ('div','=',self.division_id.id),('id', 'not in', stud_ids)])
+
+        if students:
+            for stud in students:
+                self.attendance_ids.create({
+                    'student_id':stud.id,
+                    'attendance_id':self.id,
+                    })
+
 class AttendanceLine(models.Model):
     _name = 'attendance.line'
+    _description = "Student Attendance Line"
 
     attendance_id = fields.Many2one('attendance.attendance', string="Attendance")
     name = fields.Char(related='student_id.name', string="Name", help="Student List is displayed based on standard and division.")
     student_id = fields.Many2one('res.partner', string="Students", domain=[('is_student', '=', True)])
+    faculty_id = fields.Many2one('res.partner', domain=[('is_faculty', '=', True)], required=True)
     roll_no = fields.Integer(related='student_id.roll_no', string="Roll Number")
     present = fields.Boolean(string="Present")
-    absence_reason = fields.Boolean(string="Absence with Reason")
-    absence_noreason = fields.Boolean(string="Absence with no Reason")
+    absence_reason = fields.Boolean(string="Absent with Reason")
+    absence_noreason = fields.Boolean(string="Absent with no Reason")
     late = fields.Boolean(string="Late")
     withdraw = fields.Boolean(string="Withdraw")
-
     standard_id = fields.Many2one('student.standard', required=True,related="attendance_id.standard_id")
     division_id = fields.Many2one('standard.division', required=True,related="attendance_id.division_id")
     selected = fields.Boolean("Select")
+    date = fields.Date(string="Today's Date")
+    attendance_line_ids = fields.One2many('attendance.line', 'date', string='Attendance Lines')
 
 
 

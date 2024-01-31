@@ -29,9 +29,27 @@ class CourseCourse(models.Model):
     _name = 'course.course'
     _description = 'Student Course Details'
 
-    name = fields.Char(string="Name")
-    description = fields.Text(string="Description")
+    name = fields.Char(string="Name" ,required=True )
+    description = fields.Text(string="Description" ,required=True)
     fee = fields.Float(string="Fee")
     rating = fields.Selection([('0','0'),('1','1'),('2','2'),('3','3'),('4','4'),('5','5')],default='0',string="Rating")
-    state = fields.Selection([('publish','Publish'),('draft','Draft')],default='draft',string="state")
+    state = fields.Selection([
+        ('draft', 'Draft'), ('publish', 'In Progress'),
+        ('finish', 'Finished'), ('cancel', 'Cancel'),
+    ], 'State', default='draft')
     img = fields.Binary(string="Cover Image")
+
+
+    def act_publish(self):
+        result = self.state = 'publish'
+        return result and result or False
+
+    def act_finish(self):
+        result = self.state = 'finish'
+        return result and result or False
+
+    def act_cancel(self):
+        self.state = 'cancel'
+
+    def act_set_to_draft(self):
+        self.state = 'draft'

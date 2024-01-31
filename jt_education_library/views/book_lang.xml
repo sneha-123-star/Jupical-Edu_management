@@ -10,7 +10,7 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="lang"/>
                             </group>
                         </group>
                     </sheet>
@@ -22,8 +22,8 @@
             <field name="name">Book Language Tree View</field>
             <field name="model">book.language</field>
             <field name="arch" type="xml">
-                <tree editable='top'>
-                    <field name="name"/>
+                <tree>
+                    <field name="lang"/>
                 </tree>
             </field>
         </record>

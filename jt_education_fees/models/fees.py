@@ -429,6 +429,8 @@ class FeesType(models.Model):
 
     name = fields.Char('Fee Type')
 
+    
+
 
 class StudentStandard(models.Model):
     _inherit = 'student.standard'

@@ -40,8 +40,10 @@
         'views/fees_sequence.xml',
         'views/fees_view.xml',
         'views/view_account_move_form.xml',
+        'views/ir_actions_server.xml',
         'reports/fee_receipt.xml',
     ],
     'application': True,
     'license':'OPL-1',
 }
+

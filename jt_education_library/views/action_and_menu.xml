@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data>
+    <data>
 
         <!-- IssueBook Form Action View -->
         <record id="action_issuebooks" model="ir.actions.act_window">
@@ -16,7 +16,7 @@
             <field name="view_mode">tree,form,kanban</field>
         </record>
 
-	    <!-- Books Form Action View -->
+        <!-- Books Form Action View -->
         <record id="action_books" model="ir.actions.act_window">
             <field name="name">Books</field>
             <field name="res_model">books.books</field>
@@ -45,12 +45,12 @@
 
         <menuitem name="Reports" id="reports_menu" parent="root_menu" sequence="4"/>
        
-        <menuitem name="Library" id="configurations_menu" parent="jt_education_base.configurations_menu" sequence="5"/>
-        
-        <menuitem name="Books" id="books_submenu" action="action_books" parent="configurations_menu"/>
+        <menuitem name="Library" id="configurations_menu" parent="jt_education_base.configurations_menu" sequence="5"/>  
 
         <menuitem name="Authors" id="author_submenu" action="action_authors" parent="configurations_menu"/>
 
-        <menuitem name="Book Language" id="language_menu" action="action_book_language" parent="configurations_menu"/>
-	</data>
+        <menuitem name="Books" id="books_submenu" action="action_books" parent="configurations_menu"/>
+
+        <menuitem name="Book's Languages" id="language_menu" action="action_book_language" parent="configurations_menu"/>
+    </data>
 </odoo>

@@ -20,8 +20,10 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields, api
+from odoo import models, fields, api,exceptions, _
 from datetime import datetime,date
+
+# student information
 
 
 class ResPartner(models.Model):
@@ -63,6 +65,7 @@ class ResPartner(models.Model):
     gr_no = fields.Char("GR Number", required=True , help="General Registration Number of student")
     father_name = fields.Char('Father Name', required=True)
     surname = fields.Char('Surname', required=True)
+    # nickname = fields.Char('Nickname')
     mother_name = fields.Char('Mother Name')
     nationality = fields.Char('Nationality')
     mother_tonque = fields.Char('Mother Tongue')
@@ -74,11 +77,13 @@ class ResPartner(models.Model):
     district_id = fields.Many2one('district.district','District',related="village.dis_id")
     state1 = fields.Many2one('res.country.state', 'State',related="district_id.state")
     country1 = fields.Many2one('res.country', 'Country',related="district_id.country")
+    
     birthdate = fields.Date('Date of Birth')
     lastschool = fields.Char('Last School Attended', help="Name of last school attended")
     last_std = fields.Char('Last Standard')
     date_admission = fields.Date('Date of admission in this school', help="Enter Date of admission in this school")
     adm_standard = fields.Many2one('student.standard', 'Admission Standard', help="Enter Standard in which student got admission in this school")
+    
     progress = fields.Char('Progress')
     conduct = fields.Char('Conduct')
     howknow_id = fields.Many2one('how.know', 'How Student Know Our School')
@@ -95,8 +100,8 @@ class ResPartner(models.Model):
     #     compute='_compute_company_type', inverse='_write_company_type')
     signature = fields.Binary("Signature")
     parentsid = fields.Many2one('res.partner',string="Parents",domain=[('is_parent', '=', True)])
-    age = fields.Integer("Age")
-    detailed_age = fields.Char("Detailed Age")
+    age = fields.Integer("Age",store=True)
+    detailed_age = fields.Char("Detailed Age",store=True)
 
 
     def get_days_in_month(self,month, year):
@@ -128,6 +133,15 @@ class ResPartner(models.Model):
                 months += 12
 
             self.detailed_age = str(years)+"  Years  "+str(months)+"  Months  "+str(days)+"  Days  "
+
+
+    @api.constrains('birthdate')
+    def validation_constraints(self):
+        today=fields.Date.today()
+        for rec in self:
+
+            if rec.birthdate and rec.birthdate >=today:
+                raise exceptions.ValidationError(_('Invalid date of birth ..please enter correct date'))
 
     @api.model
     def create(self, vals):

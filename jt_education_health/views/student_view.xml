@@ -18,6 +18,54 @@
                                 <field name="major_diseases" />
                                 <field name="regular_checkup" />
                             </tree>
+
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="type" />
+                                        <field name="student_id" style="width: 100%%" attrs="{'required':[('type','=','student')],'invisible':[('type','!=','student')]}" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                                        <field name="faculty_id" style="width: 100%%" attrs="{'required':[('type','=','faculty')],'invisible':[('type','!=','faculty')]}" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="height" />
+                                        <field name="weight" />
+                                        <field name="blood_group" />
+                                    </group>
+                                </group>
+                                <group string="Other Details">
+                                    <group>
+                                        <field name="eyeglasses" />
+                                        <field name="eyeglasses_no" attrs="{'invisible': [('eyeglasses','!=',True)]}" />
+                                        <field name="major_diseases" />
+                                        
+                                    </group>
+                                    <group>
+                                        <field name="physical_challenges" />
+                                        <field name="physical_challenges_note"
+                                            attrs="{'invisible': [('physical_challenges','!=',True)]}" />
+                                        <field name="regular_checkup" />
+                                    </group>                                    
+                                </group>
+                                <label for="major_diseases_note" attrs="{'invisible': [('major_diseases','!=',True)]}"/>
+                                <field name="major_diseases_note"
+                                            attrs="{'invisible': [('major_diseases','!=',True)]}" />
+                                <separator string="Checkup Details" />
+                                
+                                <field name="health_line" nolabel="1">
+                                    <tree string="Checkup Line">
+                                        <field name="date" />
+                                        <field name="name" />
+                                    </tree>
+                                    <form string="Checkup Line">
+                                        <group>
+                                            <field name="date" />
+                                            <field name="name" />
+                                            <field name="recommendation" />
+                                        </group>
+                                    </form>
+                                </field>
+                                
+                            </form>
                         </field>
                     </page>
                 </xpath>

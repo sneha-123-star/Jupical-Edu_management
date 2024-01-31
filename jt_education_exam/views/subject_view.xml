@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data>
+    <data>
 
         <!-- StudentSubject Form View-->
         <record id="student_subject_form_view" model="ir.ui.view">
@@ -8,15 +8,17 @@
             <field name="model">student.subject</field>
             <field name="arch" type="xml">
                 <form>
-                	<sheet>
-                		<group>
-                			<group>
-		                		<field name = "code"/>
-		                		<field name = "name"/>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name = "code"/>
+                                <field name = "name"/>
                                 <field name="subject_category_ids" widget="many2many_tags"/>
-		                	</group>
-		                </group>
-                	</sheet>
+                                <field name="mark"/>
+                                <field name="pass_mark"/>
+                            </group>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -29,7 +31,9 @@
                 <tree editable="top">
                     <field name="code"/>
                     <field name="name"/>     
-                    <field name="subject_category_ids" widget="many2many_tags"/>                          
+                    <field name="subject_category_ids" widget="many2many_tags"/>
+                    <field name="mark"/>
+                    <field name="pass_mark"/>                          
                 </tree>
             </field>
         </record>

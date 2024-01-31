@@ -209,6 +209,8 @@
 
 
                 <!-- Actions -->
+
+        
         <record model="ir.actions.act_window" id="action_school_fees">
             <field name="name">School Fees</field>
             <field name="res_model">fees.fees</field>
@@ -261,12 +263,7 @@
             sequence="3"
             groups="psf_group_manager,sf_group_manager"/>
 
-    <!--     <menuitem 
-            name="Fees Structure"
-            id="fees_structure_menu"
-            parent="setting_menu"
-            action="action_fees_type"/> -->
- 
+   
 
         <menuitem 
             name="Fees Type"

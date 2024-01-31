@@ -45,8 +45,11 @@ class StudentSubject(models.Model):
         ('code', 'unique(code)', "Another Subject already exists with this code!"), ]
 
     name = fields.Char(string='Name', required=True, help="Name of the Subject")
-    code = fields.Char(string="Code", help="Enter the Subject Code")
-    subject_category_ids = fields.Many2many('subject.category', 'subject_for_id', string="Subject Categories")
+    code = fields.Char(string="Code", help="Enter the Subject Code", required=True)
+    subject_category_ids = fields.Many2many('subject.category', 'subject_for_id', required=True, string="Subject Categories")
+    mark = fields.Float('Marks')
+    pass_mark = fields.Float('Passing Marks')
+
 
     def name_get(self):
         res = []
