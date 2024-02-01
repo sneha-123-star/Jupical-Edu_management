@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!--  timetable action view  -->
+		<record id="action_student_time_table" model="ir.actions.act_window">
+			<field name="name">Timetable</field>
+			<field name="res_model">student.timetable</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					You have'nt created any timetable yet.
+				</p>
+			</field>
+		</record>
+
+		<!--  Period action view  -->
+		<record id="action_student_timetable_period" model="ir.actions.act_window">
+			<field name="name">Periods</field>
+			<field name="res_model">timetable.period</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					You have'nt created any Periods yet.
+				</p>
+			</field>
+		</record>
+
+		<menuitem
+				id="student_time_table_menu" name="Timetable" parent="jt_education_base.student_root_menu" action="action_student_time_table" sequence="3"/>
+
+		<menuitem name="Timetable" id="configurations_time" parent="jt_education_base.configurations_menu" sequence="7"/>
+
+		<menuitem
+				id="student_timetable_period_menu" name="Periods" parent="configurations_time" action="action_student_timetable_period"/>
+	</data>
+</odoo>

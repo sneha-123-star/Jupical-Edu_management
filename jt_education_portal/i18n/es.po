@@ -1,0 +1,273 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ae_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-12 14:28+0000\n"
+"PO-Revision-Date: 2020-10-12 14:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Attended Date"
+msgstr "Fecha de asistencia"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Author"
+msgstr "Autor"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Book"
+msgstr "Libro"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Book Limit"
+msgstr "Límite de libros"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Category"
+msgstr "Categoría"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "Date"
+msgstr "Fecha"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Date of Issue"
+msgstr "Fecha de emisión"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Date of Return"
+msgstr "Fecha de regreso"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Event State"
+msgstr "Estado del evento"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Events"
+msgstr "Eventos"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Events Details"
+msgstr "Detalles de los eventos"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "Exam"
+msgstr "Examen"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Exam Details"
+msgstr "Detalles del examen"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+msgid "Exams"
+msgstr "Exámenes"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr "Lista de exámenes"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Fees"
+msgstr "Tarifas"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Fees Details"
+msgstr "Detalles de los honorarios"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr "Lista de honorarios"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Fees Type"
+msgstr "Tipo de honorarios"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "From"
+msgstr "De"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Genres"
+msgstr "Géneros"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+msgid "Issue Books"
+msgstr "Libros de edición"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books
+msgid "Issue ID"
+msgstr "Identificación de la emisión"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr "Lista de temas"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+msgid "Library Details"
+msgstr "Detalles de la biblioteca"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Membership"
+msgstr "Membresía"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Membership ID"
+msgstr "Identificación de miembro"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Month"
+msgstr "Mes"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Overall Pass/Fail"
+msgstr "Pasa/No pasa en general"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Paid On"
+msgstr "Pagado en"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Passing Marks"
+msgstr "Marcas de paso"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Receipt Number"
+msgstr "Número de recibo"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Result"
+msgstr "Resultado"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.ae_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Results"
+msgstr "Resultados"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result_list
+msgid "Results List"
+msgstr "Lista de resultados"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Scored Marks"
+msgstr "Marcas de puntuación"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Standard"
+msgstr "Estándar"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "State"
+msgstr "Provincia"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_membership
+msgid "Status"
+msgstr "Estado"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr "Sujeto Pasa/No pasa"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Subjects"
+msgstr "Temas"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+msgid "To"
+msgstr "A"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_result
+msgid "Total Marks"
+msgstr "Marcas totales"
+
+#. module: ae_education_portal
+#: model_terms:ir.ui.view,arch_db:ae_education_portal.portal_fees
+msgid "Year"
+msgstr "Año"

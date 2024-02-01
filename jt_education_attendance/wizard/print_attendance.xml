@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="export_attendance_wizard_form" model="ir.ui.view">
+        <field name="name">Export Attendance Summary</field>
+        <field name="model">print.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="duration" widget="radio" options="{'horizontal': true}"/>
+                            <field name="start_date" attrs="{'invisible':[('duration', '!=', 'custom')]}"/>
+                            <field name="date" attrs="{'invisible':[('duration', '!=', 'daily')]}"/>
+                            <field name="standard_id"/>
+                        </group>
+                        <group>
+                            <field name="end_date" attrs="{'invisible':[('duration', '!=', 'custom')]}"/>
+                            <field name="division_id"/>
+                            <field name="faculty_id"/>
+                            <field name="monthly" attrs="{'invisible':[('duration', '!=', 'monthly')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="generate_attendance_report" string="Generate Report"
+                        type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_highlight" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_attendance_wizard">
+          <field name="name">Export Attendance Summary</field>
+          <field name="res_model">print.attendance</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="jt_education_attendance.export_attendance_wizard_form"/>
+    </record>
+
+    <menuitem name="Reports" id="menu_education_reports" 
+              parent="jt_education_base.root_menu" sequence="6"/>
+
+    <menuitem name="Attendance" id="attendance_report" parent="jt_education_attendance.menu_education_reports" action="jt_education_attendance.action_attendance_wizard" sequence="1"/>
+
+</odoo>

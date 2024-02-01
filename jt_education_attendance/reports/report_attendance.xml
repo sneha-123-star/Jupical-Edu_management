@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+         <template id="attendance_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="result">
+                    <div class="page">
+                        <t t-set="report_data" t-value="result.ger_report_data()"/>
+                        <div style="padding-top:10px;">
+                            <div>
+                                <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                            </div>
+                            <div style="align:center;text-align:center;">
+                                <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">Attendance Report</p>
+                                <p  style="align:center;text-align:center;black;font-size:20px;">
+                                    For Class
+                                    <span t-esc="result.standard_id.name"/> - 
+                                    <span t-esc="result.division_id.name"/>
+                                </p>
+                                 <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>From:</strong>
+                                 <span t-esc="result.start_date"/>
+                                <strong>To:</strong>
+                                 <span t-esc="result.end_date"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Responsible Teacher:</strong>
+                            <span t-esc="result.faculty_id.name"/>
+                        </div><br/>
+                        <div class="container-justify-content-center text-center">
+
+                    <t t-foreach="range(0,report_data.get('months_difference')+1)" t-as="months_difference">
+                        <table class="table table-bordered">
+                          <tr style="margin-right:50px;">
+                            <th>Month</th>
+                            <t t-set="month_name" t-value="report_data.get('month_name')[months_difference]"/>
+                            <t t-if="report_data.get('number_days')[months_difference][0]+1 == 32">                            
+                                <td colspan='32'>
+                                    <strong>
+                                        <span t-esc="report_data.get('month_name')[months_difference]"/>
+                                    </strong>
+                                </td>
+                            </t>
+                            <t t-if="report_data.get('number_days')[months_difference][0]+1 == 30">                            
+                                <td colspan='30'>
+                                    <strong>
+                                        <span t-esc="report_data.get('month_name')[months_difference]"/>
+                                    </strong>
+                                </td>
+                            </t>
+                            <t t-if="report_data.get('number_days')[months_difference][0]+1 == 31">                            
+                                <td colspan='31'>
+                                    <strong>
+                                        <span t-esc="report_data.get('month_name')[months_difference]"/>
+
+                                    </strong>
+                                </td>
+                            </t>
+                            <t t-if="report_data.get('number_days')[months_difference][0]+1 == 29">                            
+                                <td colspan='29'>
+                                    <strong>
+                                        <span t-esc="report_data.get('month_name')[months_difference]"/>
+
+                                    </strong>
+                                </td>
+                            </t>
+                            
+                            
+                          </tr>  
+                          <tr >
+                            <th rowspan="2">Dep/Emp</th>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-esc="date"/>
+                                </td>
+                            </t>
+
+                            <th rowspan="2" >Sum
+                            </th>                         
+                          </tr> 
+                          <tr >
+                            <t t-foreach="range(0,len(report_data.get('number_days')[months_difference][1]))" t-as="day">
+                                <td>
+                                    <t t-esc="report_data.get('number_days')[months_difference][1][day][:2]"/>
+                                </td>
+                            </t>
+                            <td/>
+                          </tr> 
+
+                           
+                          <tr>
+                            <td>
+                                <t t-foreach="report_data.get('students')" t-as="student">
+                                    <tr>
+                                        <t t-if="report_data.get('number_days')[months_difference][0]+1 == 32">                            
+                                            <td colspan='32'>
+                                            <t t-esc="student.name"/>
+                                            </td>
+                                        </t>
+
+                                        <t t-if="report_data.get('number_days')[months_difference][0]+1 == 30">                            
+                                            <td colspan='30'>
+                                            <t t-esc="student.name"/>
+                                            </td>
+                                        </t>
+
+                                        <t t-if="report_data.get('number_days')[months_difference][0]+1 == 31">                            
+                                            <td colspan='31'>
+                                            <t t-esc="student.name"/>
+                                            </td>
+                                        </t>
+
+                                        <t t-if="report_data.get('number_days')[months_difference][0]+1 == 29">                            
+                                            <td colspan='29'>
+                                            <t t-esc="student.name"/>
+                                            </td>
+                                        </t>
+
+                                        <t t-set="count_present" t-value="0"/>
+                                        <t t-set="count_absent" t-value="0"/>
+                                        <t t-set="count_absent_noreason" t-value="0"/>
+                                        <t t-set="count_late" t-value="0"/>
+                                        <t t-set="count_withdraw" t-value="0"/>
+                                        <t t-set="subtotal" t-value="0"/>
+                                        
+                                    </tr>
+                                     
+                                    <tr> 
+                                        <td>
+                                            <strong>Present
+                                            </strong>
+                                        </td>
+                                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                                 <t t-set="students_present" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.attendance_id.date.day == date)"/>
+                                                    <td>
+                                                        <t if="students_present">
+                                                            <t t-foreach="students_present" t-as="student_present">
+                                                                <t t-if="student_present and student_present.present">
+                                                                    <span class="fa fa-check"/>
+                                                                    <t t-set="count_present" t-value="count_present+1"/>
+                                                                    <t t-set="subtotal" t-value="subtotal+1"/>
+                                                                </t>
+                                                            </t>
+                                                         
+                                                        </t>
+                                                    </td>                                          
+                                              </t>
+                                          <td>
+                                                <strong><t t-esc="subtotal"/></strong>
+                                          </td>
+                                    </tr>
+                                    <tr> 
+                                        <td>
+                                            <strong>Late Present
+                                            </strong>
+                                        </td>
+                                        
+                                        <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                             <t t-set="students_late" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.attendance_id.date.day == date)"/>
+                                                <td>
+                                                    <t if="students_late">
+                                                        <t t-foreach="students_late" t-as="students_late">
+                                                            <t t-if="students_late and students_late.late">
+                                                                <span class="fa fa-check"/>
+                                                                <t t-set="count_late" t-value="count_late+1"/>
+                                                                <t t-set="subtotal" t-value="subtotal+1"/>
+                                                            </t>
+                                                            
+                                                        </t>
+
+                                                    </t>
+                                                </td>                                          
+                                          </t>
+                                          <td>
+                                                <strong><t t-esc="count_late"/></strong>
+                                          </td>
+                                    </tr>
+                                    <tr> 
+                                        <td>
+                                            <strong>Absent With Reason
+                                            </strong>
+                                        </td>
+                                        
+                                        <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                             <t t-set="students_absent" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.attendance_id.date.day == date)"/>
+                                                <td>
+                                                    <t if="students_absent">
+                                                        <t t-foreach="students_absent" t-as="students_absent">
+                                                            <t t-if="students_absent and students_absent.absence_reason">
+                                                                <span class="fa fa-check"/>
+                                                                <t t-set="count_absent" t-value="count_absent+1"/>
+                                                                <!-- <t t-set="subtotal" t-value="subtotal+1"/> -->
+                                                            </t>
+                                                           
+                                                        </t>
+                                                    </t>
+                                                </td>                                          
+                                          </t>
+                                          <td>
+                                                <strong><t t-esc="count_absent"/></strong>
+                                          </td>
+                                    </tr>
+                                    <tr> 
+                                        <td>
+                                            <strong>Absent With No Reason
+                                            </strong>
+                                        </td>
+                                        
+                                        <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                             <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.attendance_id.date.day == date)"/>
+                                                <td>
+                                                    <t if="students_absent_noreason">
+                                                        <t t-foreach="students_absent_noreason" t-as="students_absent_noreason">
+                                                            <t t-if="students_absent_noreason and students_absent_noreason.absence_noreason">
+                                                                <span class="fa fa-check"/>
+                                                                <t t-set="count_absent_noreason" t-value="count_absent_noreason+1"/>
+                                                            </t>
+                                                            
+                                                        </t>
+                                                    </t>
+                                                </td>                                          
+                                          </t>
+                                          <td>
+                                                <strong><t t-esc="count_absent_noreason"/></strong>
+                                          </td>
+                                    </tr>
+                                    
+                                    <tr> 
+                                        <td>
+                                            <strong>Withdraw(stop)
+                                            </strong>
+                                        </td>
+                                      
+                                        <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                             <t t-set="students_withdraw" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.attendance_id.date.day == date)"/>
+                                                <td>
+                                                    <t if="students_withdraw">
+                                                        <t t-foreach="students_withdraw" t-as="students_withdraw">
+                                                            <t t-if="students_withdraw and students_withdraw.withdraw">
+                                                                <span class="fa fa-check"/>
+                                                                <t t-set="count_withdraw" t-value="count_withdraw+1"/>
+                                                                <t t-set="subtotal" t-value="subtotal+1"/>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </td>                                          
+                                          </t>
+                                          <td>
+                                                <strong><t t-esc="count_withdraw"/></strong>
+                                          </td>
+                                    </tr>
+                                  <!--   <tr>
+                                        <td>
+                                            <t t-esc="subtotal"/>
+                                        </td>
+                                    </tr> -->
+                                </t>
+                            </td>
+                        </tr>
+                        <t t-set="absnt_no_res_count" t-value="0"/>
+                        <t t-set="clmn_present_count" t-value="0"/>
+                        <t t-set="absnt_res_count" t-value="0"/>
+                        <t t-set="late_count" t-value="0"/>
+                        <t t-set="withdraw_count" t-value="0"/>
+                        <t t-set="absnt_no_res_count_sum" t-value="0"/>
+                        <t t-set="clmn_present_count_sum" t-value="0"/>
+                        <t t-set="absnt_res_count_sum" t-value="0"/>
+                        <t t-set="late_count_sum" t-value="0"/>
+                        <t t-set="withdraw_count_sum" t-value="0"/>
+
+
+                        <tr>
+                            <t t-if="report_data.get('number_days')[months_difference][0]+1 == 33">                            
+                                <td colspan='33'>
+                                    <b>Total</b>
+                                </td>
+                            </t>
+                             <t t-if="report_data.get('number_days')[months_difference][0]+1 == 31">                            
+                                <td colspan='31'>
+                                    <b>Total</b>
+                                </td>
+                            </t>
+                             <t t-if="report_data.get('number_days')[months_difference][0]+1 == 30">                            
+                                <td colspan='30'>
+                                    <b>Total</b>
+                                </td>
+                            </t>
+                             <t t-if="report_data.get('number_days')[months_difference][0]+1 == 32">                            
+                                <td colspan='32'>
+                                    <b>Total</b>
+                                </td>
+                            </t>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                 <strong>Present</strong>
+                            </td>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.attendance_id.date.day == date)"/>
+                                    <t t-foreach="students_absent_noreason" t-as="students_absent_rec">
+                                        <t t-if="students_absent_rec.attendance_id.date and students_absent_rec.attendance_id.date.day == date">
+                                            <t t-if="students_absent_rec.present">
+                                                <t t-set="clmn_present_count" t-value="clmn_present_count+1"/>
+                                                <t t-set="clmn_present_count_sum" t-value="clmn_present_count_sum+1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                    <strong> <t t-esc="clmn_present_count"/></strong>
+                                    <t t-set="clmn_present_count" t-value="0"/>
+                                </td>
+                            </t>
+                            <td>
+                                <strong> <t t-esc="clmn_present_count_sum"/></strong>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td> <strong>Late Present</strong></td>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.attendance_id.date.day == date)"/>
+                                    <t t-foreach="students_absent_noreason" t-as="students_absent_rec">
+                                        <t t-if="students_absent_rec.attendance_id.date and students_absent_rec.attendance_id.date.day == date">
+                                            <t t-if="students_absent_rec.late">
+                                                <t t-set="late_count" t-value="late_count+1"/>
+                                                <t t-set="late_count_sum" t-value="late_count_sum+1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                     <strong><t t-esc="late_count"/></strong>
+                                    <t t-set="late_count" t-value="0"/>
+                                </td>
+                            </t>
+                            <td>
+                                <strong><t t-esc="late_count_sum"/></strong>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>  <strong> Absent with reason</strong></td>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.attendance_id.date.day == date)"/>
+                                    <t t-foreach="students_absent_noreason" t-as="students_absent_rec">
+                                        <t t-if="students_absent_rec.attendance_id.date and students_absent_rec.attendance_id.date.day == date">
+                                            <t t-if="students_absent_rec.absence_reason">
+                                                <t t-set="absnt_res_count" t-value="absnt_res_count+1"/>
+                                                <t t-set="absnt_res_count_sum" t-value="absnt_res_count_sum+1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                     <strong><t t-esc="absnt_res_count"/></strong>
+                                    <t t-set="absnt_res_count" t-value="0"/>
+                                </td>
+                            </t>
+                            <td><strong><t t-esc="absnt_res_count_sum"/></strong></td>
+                        </tr>
+
+                        <tr>
+                            <td> <strong> Absent no reason</strong></td>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.attendance_id.date.day == date)"/>
+                                    <t t-foreach="students_absent_noreason" t-as="students_absent_rec">
+                                        <t t-if="students_absent_rec.attendance_id.date and students_absent_rec.attendance_id.date.day == date">
+                                            <t t-if="students_absent_rec.absence_noreason">
+                                                <t t-set="absnt_no_res_count" t-value="absnt_no_res_count+1"/>
+                                                <t t-set="absnt_no_res_count_sum" t-value="absnt_no_res_count_sum+1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                     <strong><t t-esc="absnt_no_res_count"/></strong>
+                                    <t t-set="absnt_no_res_count" t-value="0"/>
+                                </td>
+                            </t>
+                            <td>
+                                <strong><t t-esc="absnt_no_res_count_sum"/></strong>
+                            </td>
+                        </tr>
+
+                       
+                        <tr>
+                            <td> <strong>Withdraw(stop)</strong></td>
+                            <t t-foreach="range(1,report_data.get('number_days')[months_difference][0]+1)" t-as="date">
+                                <td>
+                                    <t t-set="students_absent_noreason" t-value="report_data.get('attendance_lines').filtered(lambda x:x.attendance_id.date.day == date)"/>
+                                    <t t-foreach="students_absent_noreason" t-as="students_absent_rec">
+                                        <t t-if="students_absent_rec.attendance_id.date and students_absent_rec.attendance_id.date.day == date">
+                                            <t t-if="students_absent_rec.withdraw">
+                                                <t t-set="withdraw_count" t-value="withdraw_count+1"/>
+                                                <t t-set="withdraw_count_sum" t-value="withdraw_count_sum+1"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                     <strong><t t-esc="withdraw_count"/></strong>
+                                    <t t-set="withdraw_count" t-value="0"/>
+                                </td>
+                            </t>
+                            <td>
+                                <strong><t t-esc="withdraw_count_sum"/></strong>
+                            </td>
+                        </tr>
+                        
+                        </table>
+
+                    </t>
+                    </div>
+
+                    </div>
+                </t>
+            </t>
+
+        </template>
+
+
+
+        <record id="attendance_report_template_paperformate" model="report.paperformat">
+            <field name="name">student.attendance.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_attendance_report" model="ir.actions.report">
+            <field name="name">Attendance</field>
+            <field name="model">print.attendance</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">jt_education_attendance.attendance_report_template</field>
+            <field name="report_file">jt_education_attendance.attendance_report_template</field>
+            <field name="paperformat_id" ref="jt_education_attendance.attendance_report_template_paperformate"/>
+            <field name="print_report_name">"Attendance Report"</field>
+            <field name="binding_model_id" ref="jt_education_attendance.model_print_attendance"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

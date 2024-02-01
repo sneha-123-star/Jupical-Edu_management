@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        <!-- Student Province View-->
+        <record id="student_province_form_view" model="ir.ui.view">
+            <field name="name">Student Province Form View</field>
+            <field name="model">province.province</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+                		<group>
+                			<group>
+		                		<field name = "name"/>
+                                <field name = "country"/>
+		                	</group>
+		                </group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Student Province Tree View-->
+        <record id="student_province_tree_view" model="ir.ui.view">
+            <field name="name">Student Province Tree View</field>
+            <field name="model">province.province</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name = "name"/>
+                    <field name = "country"/> 
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_province_village" model="ir.actions.act_window">
+            <field name="name">Student Province</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">province.province</field>
+            <field name="view_mode">tree,form</field>
+	    </record>
+    </data>
+</odoo>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="student_profile" model="ir.ui.view">
+            <field name="name">student.profile.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Students">
+                <sheet>
+                    <field name="image_1920" widget='image' placeholder="please add photo" class="oe_avatar" options='{"preview_image": "avatar_128"}'/>
+                    <field name="type" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="commercial_partner_id" invisible="1"/>
+
+                    <div class="oe_title">
+                        <h1><field name="stud_id" readonly='1'/></h1>
+                        <field name="company_type" options="{'horizontal': true}" widget="radio" groups="base.group_no_one"/>
+                        <field name="parent_id"
+                            widget="res_partner_many2one"
+                            options="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}"
+                            placeholder="Company"
+                            domain="[('is_company', '=', True)]"
+                            context="{'default_is_company': True, 'show_vat': True}"/>
+                        <field name="company_name" options="{'invisible': ['|', '|', ('company_name', '=', False), ('company_name', '=', ''), ('is_company', '=', True)]}"/>
+                        <button name="create_company" type="object" class="oe_edit_only btn-link" options="{'invisible': ['|', '|', ('is_company','=', True), ('company_name', '=', ''), ('company_name', '=', False)]}">
+                            <span class="fa fa-plus-square"/>Create company
+                        </button>        
+                    </div>
+ 
+                    <group>
+                        <group>
+                            <field name="name" default_focus="1" options="{'required' : [('type', '=', 'contact')]}"/>
+                            <field name="surname"/>
+                            <!-- <field name="nickname"/> -->
+                            <field name="type" options="{'invisible': [('parent_id','=', False)]}" groups="base.group_no_one" invisible="1"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <div invisible="1" options="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}" class="oe_edit_only"><b>Company Address:</b></div>
+                                <field name="street" placeholder="Street..." class="o_address_street" required='1' options="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street" required='1' options="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="city" placeholder="City" class="o_address_city" options="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" required='1'/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True, "readonly": [("type", "=", "contact"), ("parent_id", "!=", False)]}' context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip" options="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" required='1'/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True, "readonly": [("type", "=", "contact"), ("parent_id", "!=", False)]}' required='1'/>
+
+                            </div>
+                            <field name="vat" placeholder="e.g. BE0477472701" options="{'readonly': [('parent_id','!=',False)]}" invisible="1"/>
+                            <!-- Extra fields for student -->
+                            <field name="is_student" string="Student" invisible="1"/>
+                            <field name="gender" string="Gender" widget="radio" options="{'horizontal': true}"/>
+                            <field name="howknow_id" string="How Know Our School"/>
+                        </group>
+                        <group>
+                            <field invisible="1" name="function" placeholder="e.g. Sales Director" options="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="father_name"/>
+                            <field name="mother_name" string="Mother Name" required="1"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="mobile" widget="phone" required='1'/>
+                            <field name="emergency_contact" widget="html"/>
+                            <field name="user_ids" invisible="1"/>
+                            <field name="email" widget="email" context="{'gravatar_image': True}" options="{'required': [('user_ids','!=', [])]}"/>
+                            <field name="website" widget="url" placeholder="e.g. www.odoo.com"/>
+                           <field name="title" options='{"no_open": True, "invisible": [("is_company", "=", True)]}' invisible="1"/>
+
+                            <field name="lang" invisible="1"/>
+                            <field name="category_id" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags..." invisible="1"/>
+                        </group>
+                    </group>
+
+
+
+                    <notebook>
+                    <page name="student_info" string="Student Information">
+                        <group>
+                            <group string="General Information">
+                                <field name="stud_id" string="Students UID" placeholder="student ID" readonly="1"/>
+                                <field name="curr_year" string="Current Year"/>
+                                <field name="standard" string="Standard"/>
+                                <field name="div" string="Division"/>
+                                <field name="gr_no" string="GR No." placeholder="student general register number"/>
+                                <div>
+                                    <div>
+                                        <label for="roll_no"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="width:100%;">
+                                        <field name="roll_no" options="{'invisible': [('roll_no','=',False)]}"/>
+                                        <button name="get_roll_no" type="object" class="oe_highlight" string="Get Roll Number" options="{'invisible': [('roll_no','!=',False)]}"/>
+                                    </div>
+                                </div>
+                                <field name="birthdate" string="Date of Birth" required="1"/>
+                                <field name="age" string="Age" readonly="1" force_save='1'/>
+                                <field name="detailed_age" string="Detailed Age" readonly="1" force_save='1'/>
+                                <field name="birthPlace" string="Place of Birth"/>
+                            </group>
+                            <group string="Other Information">
+                                <field name="caste" string="Caste"/>
+                                <field name="subcaste" string="Sub-Caste"/>
+                                <field name="nationality" string="Nationality" placeholder="INDIAN"/>
+                                <field name="religion" string="Religion"/>
+                                <field name="village" string="Taluka"/>
+                                <field name="district_id" string="District"/>
+                                <field name="state1" string="State"/>
+                                <field name="country1" string="Country"/>
+                                <field name="mother_tonque" string="Mother Tongue"/>
+                                <field name="detension"/>
+                                <field name="working_days"/>
+                            </group>
+                        </group>
+                        <group string="Notes">
+                            <field name="remarks" string="Remarks"/>
+                            <field name="progress" string="Progress"/>
+                        </group>
+                    </page>
+                    <page string="Student Signature" name="student_signature">
+                        <group>
+                            <group>
+                                <field name="signature" widget="signature"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name='internal_notes' string="Internal Notes">
+                        <field name="comment" placeholder="Internal note..."/>
+                    </page>
+                    <page name="leaving_info" string="Leaving Information">
+                        <group>
+                            <group>
+                                <field name="lastschool" string="Last College Attended" groups="jt_education_base.group_college"/>
+                                <field name="lastschool" string="Last School Attended" groups="jt_education_base.group_school"/>
+
+                                <field name="last_std" string="Last Standard"/>
+
+                                <field name="date_admission" string="Date of Admission in this College" groups="jt_education_base.group_college"/>
+                                <field name="date_admission" string="Date of Admission in this School" groups="jt_education_base.group_school"/>
+
+                                <field name="adm_standard" string="Admission Standard"/>
+                                <field name="conduct" string="Conduct"/>
+                                <field name="promotion" widget="selection"/>
+                                <field name="studying_since" string="Studying since"/>
+                            </group>
+                            <group>
+                                <field name="reason_for_leave" string="Reason for Leaving College" groups="jt_education_base.group_college"/>
+                                <field name="reason_for_leave" string="Reason for Leaving School" groups="jt_education_base.group_school"/>
+
+                                <field name="working_days_present"/>
+                                <field name="lc_apply_date"/>
+                                <field name="lc_issue_date"/>
+
+                                <field name="leave_date" string="Date of Leaving College" groups="jt_education_base.group_college"/>
+                                <field name="leave_date" string="Date of Leaving School" groups="jt_education_base.group_school"/>
+                            </group>
+                            <group> 
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_tree_view" model="ir.ui.view">
+            <field name="name">student.tree.view</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Student Name"/>
+                    <field name="standard" string="Standard"/>
+                    <field name="div" string="Division"/>
+                    <field name="curr_year" string="Academic Year"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_kanban_view" model="ir.ui.view">
+            <field name="name">student.kanban.view</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name = "id"/>
+                    <field name = "name"/>
+                    <field name = "standard"/>
+                    <field name = "div"/>
+                    <field name = "curr_year"/>
+                    <field name = "mobile"/>
+                    <field name = "email"/>
+                    <field name = "image_1920"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <t t-if="record.image_1920.raw_value">
+                                    <div class="o_kanban_image">
+                                        <img alt="Avatar" t-att-src="kanban_image('res.partner', 'image_1920',record.id.raw_value)"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div class="o_kanban_image">
+                                        <img alt="AvatarDefault" src='base/static/img/avatar_grey.png'/>
+                                    </div>
+                                </t>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/><br/>
+                                        <field name = "standard"/> - <field name="div"/><br/>
+                                        <field name="curr_year"/><br/>
+                                        <field name="mobile"/><br/>
+                                        <field name="email"/><br/>
+                                    </strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- student search view -->
+        <record id="student_search_view" model="ir.ui.view">
+            <field name="name">student.search.view</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="is_student" string="Student" invisible="1"/>
+                    <field name="standard" string="Standard"/>
+                    <field name="div"/>
+                    <field name="curr_year"/>
+                    <filter string="Student" name="student" domain="[('is_student','=',False)]"/>
+                    <group expand="1">
+                        <filter name="standard" string="Standard" domain="[('is_student','=',True)]" context="{'group_by' : 'standard'}"/>
+                        <filter name="gender" string="Gender" domain="[('is_student','=',True)]" context="{'group_by' : 'gender'}"/>
+                        <filter name="division" string="Division" domain="[('is_student','=',True)]" context="{'group_by' : 'div'}"/>
+                        <filter name="curr_year" string="Academic Year" domain="[('is_student','=',True)]" context="{'group_by' : 'curr_year'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

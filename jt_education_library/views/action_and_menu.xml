@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- IssueBook Form Action View -->
+        <record id="action_issuebooks" model="ir.actions.act_window">
+            <field name="name">Issue Books</field>
+            <field name="res_model">issue.books</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- Memberships Form Action View -->
+        <record id="action_memberships" model="ir.actions.act_window">
+            <field name="name">Memberships</field>
+            <field name="res_model">library.memberships</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- Books Form Action View -->
+        <record id="action_books" model="ir.actions.act_window">
+            <field name="name">Books</field>
+            <field name="res_model">books.books</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- Authors Form Action View -->
+        <record id="action_authors" model="ir.actions.act_window">
+            <field name="name">Authors</field>
+            <field name="res_model">authors.authors</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+         <!--Book language Form Action View -->
+        <record id="action_book_language" model="ir.actions.act_window">
+            <field name="name">Language</field>
+            <field name="res_model">book.language</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem name="Library" id="root_menu" parent="jt_education_base.root_menu" sequence="4" groups="jt_education_base.group_principle,jt_education_base.group_faculty"/>
+
+        <menuitem name="Issue Books" id="issuebooks_menu" action="action_issuebooks" parent="root_menu" sequence = "2"/>
+
+        <menuitem name="Memberships" id="memberships_menu" action="action_memberships" parent="root_menu" sequence="3"/>
+
+        <menuitem name="Reports" id="reports_menu" parent="root_menu" sequence="4"/>
+       
+        <menuitem name="Library" id="configurations_menu" parent="jt_education_base.configurations_menu" sequence="5"/>  
+
+        <menuitem name="Authors" id="author_submenu" action="action_authors" parent="configurations_menu"/>
+
+        <menuitem name="Books" id="books_submenu" action="action_books" parent="configurations_menu"/>
+
+        <menuitem name="Book's Languages" id="language_menu" action="action_book_language" parent="configurations_menu"/>
+    </data>
+</odoo>

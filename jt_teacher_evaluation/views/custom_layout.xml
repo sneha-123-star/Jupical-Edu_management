@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="custom_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div t-attf-class="header" t-att-style="report_header_style">
+           
+            <div class="o_boxed_header">
+            <div class="row mb8">
+                <div class="o_boxed_header" style="padding-top: 20px;">
+                            <div class="header-content" style="text-align: center; margin: 0 auto;">
+                                <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="background-color: #f4d988; width: 100px; height: 100px; padding: 5px; margin-left: 0px;" class="company-logo"/>
+                                <p style="font-size: 40px; color: black;" t-field="res_company.name" class="company-name"/>
+                                <div name="company_address" style="color: black;">
+                                    <ul class="list-unstyled">
+                                        <li t-if="company.is_company_details_empty"><t t-esc="company.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/></li>
+                                        <li t-else=""><t t-esc="company.company_details"/></li>
+                                        <li t-if="forced_vat">
+                                            <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:
+                                            <span t-esc="forced_vat"/>
+                                        </li>
+                                    </ul>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+        <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <div class="pt-5">
+                <!-- This div ensures that the address is not cropped by the header. -->
+                <t t-call="web.address_layout"/>
+            </div>
+            <t t-out="0"/>
+        </div>
+
+        <div t-attf-class="footer o_boxed_footer o_company_#{company.id}_layout">
+            <div class="text-center">
+                <div t-field="company.report_footer"/>
+                <div t-if="report_type == 'pdf'">
+                    Page: <span class="page"/> / <span class="topage"/>
+                </div>
+                <div t-if="report_type == 'pdf' and display_name_in_footer" class="text-muted">
+                    <span t-field="o.name"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    
+</odoo>

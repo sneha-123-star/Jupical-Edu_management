@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Grade Form View-->
+        <record id="result_grade_form_view" model="ir.ui.view">
+            <field name="name">result.grade.form.view</field>
+            <field name="model">result.grade</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name = "name"/>
+                            </group>
+                            <group>
+                                <field name = "mark_range"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Grade tree View-->
+        <record id="result_grade_tree_view" model="ir.ui.view">
+            <field name="name">result.grade.tree.view</field>
+            <field name="model">result.grade</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>    
+                    <field name = "mark_range"/>
+
+                </tree>
+            </field>
+        </record>
+
+         <!-- Subject Category Form View-->
+        <record id="subject_category_form_view" model="ir.ui.view">
+            <field name="name">subject.category.form.view</field>
+            <field name="model">subject.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name = "name"/>
+                            </group>
+                            <group>
+                                <field name = "mark"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Grade tree View-->
+        <record id="subject_category_tree_view" model="ir.ui.view">
+            <field name="name">subject.category.tree.view</field>
+            <field name="model">subject.category</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>    
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
